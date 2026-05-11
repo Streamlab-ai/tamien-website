@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tamien Dysart | Leadership Speaker & Culture Architect</title>
+  <meta name="description" content="Tamien Dysart helps leaders build cultures people don't want to leave — and lives they're proud to live. Book Tamien to speak, explore Think 3D Solutions, or discover Elevate You." />
+  <meta property="og:title" content="Tamien Dysart | Leadership Speaker & Culture Architect" />
+  <meta property="og:description" content="From self-awareness to amplified impact — for the individual, the organization, and the community." />
+  <meta property="og:image" content="../documents/tamien-speaking-think-3d-1024x1024.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0D1B2A;
+      color: #F0EEE9;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── TOKENS ─── */
+    :root {
+      --navy:   #0D1B2A;
+      --navy2:  #122236;
+      --navy3:  #1A3050;
+      --gold:   #C9932F;
+      --gold2:  #E8AC45;
+      --white:  #F0EEE9;
+      --muted:  #8A9BB0;
+      --blue:   #1A6FE8;
+      --radius: 6px;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3, h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+    h1 { font-size: clamp(3rem, 8vw, 7rem); text-transform: uppercase; }
+    h2 { font-size: clamp(2.2rem, 5vw, 4rem); text-transform: uppercase; }
+    h3 { font-size: clamp(1.4rem, 3vw, 2rem); text-transform: uppercase; }
+    h4 { font-size: 1.25rem; }
+    p  { font-size: 1.0625rem; line-height: 1.75; color: #C8D8E8; }
+
+    .gold     { color: var(--gold); }
+    .gold2    { color: var(--gold2); }
+    .white    { color: var(--white); }
+    .muted    { color: var(--muted); }
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    .section   { padding: 100px 0; }
+    .section--dark  { background: var(--navy); }
+    .section--dark2 { background: var(--navy2); }
+    .section--dark3 { background: var(--navy3); }
+    .divider { width: 56px; height: 3px; background: var(--gold); margin: 20px 0 32px; }
+    .divider--center { margin: 20px auto 32px; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      border: 2px solid transparent;
+      transform: translateY(0);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+    .btn:active { transform: translateY(0); box-shadow: none; }
+    /* Primary: solid gold fill — hover brightens */
+    .btn--gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .btn--gold:hover { background: var(--gold2); border-color: var(--gold2); color: var(--navy); }
+    /* Secondary: white outline — hover fills white */
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+    .btn--outline:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
+    /* Ghost gold: gold outline — hover fills gold (same end state as btn--gold) */
+    .btn--outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .btn--outline-gold:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    /* Blue: solid blue — hover darkens */
+    .btn--blue {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+    .btn--blue:hover { background: #1558c4; border-color: #1558c4; color: var(--white); }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0;
+      transition: background 0.3s, padding 0.3s;
+    }
+    #nav.scrolled {
+      background: rgba(13,27,42,0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+      padding: 0;
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { font-size: 0.78rem !important; color: var(--gold) !important; border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+    .nav-cta:hover { color: var(--gold2) !important; border-color: var(--gold2); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.2s; }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      padding: 16px 28px 24px;
+      background: rgba(13,27,42,0.99);
+      gap: 20px;
+    }
+    .mobile-menu a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .mobile-menu a:hover { color: var(--white); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu.open { display: flex; }
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('../documents/tamien-speaking-think-3d-1024x1024.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.15);
+      transform: scale(1.02);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(13,27,42,0.98) 0%,
+        rgba(13,27,42,0.92) 50%,
+        rgba(13,27,42,0.2) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 120px 28px 80px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-text { }
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero-headline {
+      margin-bottom: 28px;
+      color: var(--white);
+    }
+    .hero-headline em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: #C8D8E8;
+      max-width: 520px;
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+    .hero-identity {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    /* Headshot portrait */
+    .hero-portrait {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-portrait-frame {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(201,147,47,0.2),
+        0 32px 80px rgba(0,0,0,0.6);
+    }
+    .hero-portrait-frame img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(15%) contrast(1.05);
+    }
+    .hero-portrait-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(13,27,42,0.6) 100%
+      );
+    }
+    .hero-portrait-accent {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 90px;
+      height: 90px;
+      border: 3px solid var(--gold);
+      border-radius: 6px;
+      z-index: -1;
+      opacity: 0.5;
+    }
+    .hero-portrait-badge {
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 10px 16px;
+      border-radius: 4px;
+      z-index: 3;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .hero-portrait-badge .badge-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      line-height: 1;
+      display: block;
+    }
+    .hero-portrait-badge .badge-lbl {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      display: block;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(to bottom, var(--muted), transparent);
+      animation: scrollDrop 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollDrop {
+      0%,100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.6); opacity: 0.4; }
+    }
+    @media (max-width: 960px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        padding-top: 100px;
+      }
+      .hero-portrait {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .hero-portrait-frame img { height: 420px; }
+      .hero-portrait-badge { left: -12px; }
+    }
+    @media (max-width: 600px) {
+      .hero-portrait { max-width: 100%; }
+      .hero-portrait-frame img { height: 340px; }
+    }
+
+    /* ─── AUTHORITY BAR ─── */
+    #authority {
+      background: var(--gold);
+      padding: 18px 0;
+      overflow: hidden;
+    }
+    .authority-track {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .authority-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+    .authority-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--navy);
+      border-radius: 50%;
+      flex-shrink: 0;
+      opacity: 0.5;
+    }
+
+    /* ─── PROBLEM ─── */
+    #problem { background: var(--navy2); }
+    .problem-trigger {
+      text-align: center;
+      padding: 60px 0 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 64px;
+    }
+    .problem-trigger blockquote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      color: var(--white);
+      max-width: 760px;
+      margin: 0 auto 16px;
+      line-height: 1.2;
+    }
+    .problem-trigger blockquote em { font-style: italic; color: var(--gold); }
+    .problem-trigger .result {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 64px;
+    }
+    .problem-card {
+      background: var(--navy3);
+      padding: 40px 32px;
+    }
+    .problem-card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .problem-card:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .problem-card .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .pain-list { list-style: none; }
+    .pain-list li {
+      font-size: 0.975rem;
+      color: #A0B4C8;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .pain-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .pain-list li:last-child { border-bottom: none; }
+    .problem-closer {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .problem-closer p { font-size: 1.1rem; }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--navy); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-wrap img {
+      border-radius: var(--radius);
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+    .about-photo-accent {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      width: 140px;
+      height: 140px;
+      border: 3px solid var(--gold);
+      border-radius: var(--radius);
+      z-index: -1;
+    }
+    .about-stat-pill {
+      position: absolute;
+      top: 24px;
+      right: -20px;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .about-stat-pill .number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      line-height: 1;
+      display: block;
+    }
+    .about-stat-pill .label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .about-content p { margin-bottom: 20px; }
+    .about-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .cred-pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid rgba(138,155,176,0.3);
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* ─── SPEAKING ─── */
+    #speaking { background: var(--navy2); }
+    .speaking-hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    .speaking-hero img {
+      border-radius: var(--radius);
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      filter: brightness(0.9);
+    }
+    .formats-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .format-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid rgba(138,155,176,0.2);
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+    .keynotes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+    .keynote-card {
+      background: var(--navy);
+      padding: 44px 40px;
+      transition: background 0.2s;
+    }
+    .keynote-card:hover { background: #0f2035; }
+    .keynote-card:first-child { border-radius: var(--radius) 0 0 0; }
+    .keynote-card:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
+    .keynote-card:nth-child(3) { border-radius: 0 0 0 var(--radius); }
+    .keynote-card:last-child  { border-radius: 0 0 var(--radius) 0; }
+    .keynote-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 4rem;
+      color: rgba(201,147,47,0.12);
+      line-height: 1;
+      margin-bottom: -10px;
+    }
+    .keynote-card h4 {
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .keynote-card p { font-size: 0.95rem; margin-bottom: 16px; }
+    .keynote-card .for {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .speaking-book-cta {
+      margin-top: 56px;
+      text-align: center;
+    }
+
+    /* ─── FRAMEWORK ─── */
+    #framework { background: var(--navy); }
+    .framework-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-bottom: 72px;
+    }
+    .ecosystem-visual {
+      background: var(--navy2);
+      border: 1px solid rgba(201,147,47,0.15);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .ecosystem-hub {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+    }
+    .ecosystem-spokes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .spoke {
+      background: var(--navy3);
+      padding: 20px 16px;
+      border-radius: var(--radius);
+      border-top: 3px solid var(--gold);
+    }
+    .spoke .spoke-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .spoke .spoke-mantra {
+      font-size: 0.7rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .connector-line {
+      width: 1px;
+      height: 24px;
+      background: rgba(201,147,47,0.4);
+      margin: 0 auto;
+    }
+    .frameworks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .framework-card {
+      background: var(--navy2);
+      border: 1px solid rgba(201,147,47,0.1);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: border-color 0.2s;
+    }
+    .framework-card:hover { border-color: rgba(201,147,47,0.4); }
+    .framework-card h4 {
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .framework-card p { font-size: 0.9rem; }
+
+    /* ─── BOOKS ─── */
+    #books { background: var(--navy2); }
+    .books-intro { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+    .book-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .book-card--think3d { background: var(--navy); border: 1px solid rgba(26,111,232,0.2); }
+    .book-card--elevate  { background: var(--navy); border: 1px solid rgba(201,147,47,0.2); }
+
+    /* Cover image — identical height both cards */
+    .book-cover-wrap {
+      position: relative;
+      height: 340px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .book-cover-wrap--think3d,
+    .book-cover-wrap--elevate  {
+      background: linear-gradient(160deg, #2a1f3d 0%, #1a1330 100%);
+    }
+    .book-cover-wrap img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 28px;
+      transition: transform 0.4s ease;
+    }
+    .book-card:hover .book-cover-wrap img { transform: scale(1.03); }
+
+    /* Body — flex column so CTA pins to bottom */
+    .book-card-body {
+      padding: 36px 40px 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .book-brand-tag--think3d {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      border: 1px solid var(--blue);
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+    .book-brand-tag--elevate {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+    .book-card h3 {
+      font-size: 1.9rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .book-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .book-card-body > p {
+      font-size: 0.975rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .book-quote {
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--gold2);
+      line-height: 1.6;
+    }
+    .book-cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .book-audience {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ─── PROGRAMS ─── */
+    #programs { background: var(--navy); }
+    .programs-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+
+    /* Subgrid: forces top / distinction / body to share row heights across both cards */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 1fr;
+      gap: 0 32px;
+    }
+    .program-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 3;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .program-card--think3d {
+      background: linear-gradient(135deg, #0f2847 0%, #0D1B2A 100%);
+      border: 1px solid rgba(26,111,232,0.25);
+    }
+    .program-card--elevate {
+      background: linear-gradient(135deg, #241808 0%, #1a1208 100%);
+      border: 1px solid rgba(201,147,47,0.3);
+    }
+    .program-card-top {
+      padding: 44px 40px 28px;
+    }
+    .program-icon {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .program-audience {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .program-audience--think3d { color: #6AA8FF; }
+    .program-audience--elevate  { color: var(--gold); }
+    .program-card h3 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .program-tagline {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .program-tagline--think3d { color: #6AA8FF; }
+    .program-tagline--elevate  { color: var(--gold); }
+    .program-distinction {
+      margin: 0 40px;
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      font-size: 0.875rem;
+      color: #A0B4C8;
+      border-left: 3px solid;
+      align-self: start;
+    }
+    .program-distinction--think3d { border-color: #1A6FE8; }
+    .program-distinction--elevate  { border-color: var(--gold); }
+    .program-card-body {
+      padding: 28px 40px 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    .program-card-body p { font-size: 0.975rem; margin-bottom: 24px; }
+    .program-list {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 0;
+    }
+    .program-list li {
+      font-size: 0.875rem;
+      color: var(--muted);
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .program-list li::before {
+      content: '→';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .program-list li:last-child { border-bottom: none; }
+    .program-card-body .btn { margin-top: 32px; align-self: flex-start; }
+
+    /* ─── PROOF ─── */
+    #proof { background: var(--navy2); }
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-bottom: 72px;
+    }
+    .stats-bar--row2 {
+      margin-top: 2px;
+      margin-bottom: 72px;
+    }
+    .stat-block {
+      background: var(--navy3);
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .stats-bar .stat-block:first-child { border-radius: var(--radius) 0 0 0; }
+    .stats-bar .stat-block:last-child  { border-radius: 0 var(--radius) 0 0; }
+    .stats-bar--row2 .stat-block:first-child { border-radius: 0 0 0 var(--radius); }
+    .stats-bar--row2 .stat-block:last-child  { border-radius: 0 0 var(--radius) 0; }
+    .stat-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 3.2rem;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .stat-arrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--gold);
+      display: inline-block;
+      margin: 0 4px;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 8px;
+      display: block;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    .testimonial-card {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      border-top: 3px solid var(--gold);
+    }
+    .testimonial-card .quote-mark {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 0.8;
+      margin-bottom: 16px;
+    }
+    .testimonial-card p {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #C8D8E8;
+      margin-bottom: 24px;
+    }
+    .testimonial-author {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .testimonial-role {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    /* ─── MEDIA PROOF STRIP ─── */
+    .media-proof-strip {
+      margin: 64px 0;
+      text-align: center;
+    }
+    .media-proof-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .media-proof-image-wrap {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(201,147,47,0.15);
+    }
+    .media-proof-image-wrap img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: brightness(0.88);
+    }
+    .media-proof-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.92), transparent);
+      padding: 32px 24px 18px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .signature-quote {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 56px 0 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .signature-quote blockquote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .signature-quote cite {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    /* ─── SOCIAL PROOF ─── */
+    #social { background: var(--navy); }
+    .social-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-bottom: 56px;
+    }
+    .social-card {
+      background: var(--navy2);
+      padding: 40px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: background 0.2s;
+    }
+    .social-card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .social-card:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .social-card:hover { background: var(--navy3); }
+    .social-platform-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+    .icon--linkedin  { background: #0A66C2; color: #fff; }
+    .icon--youtube   { background: #FF0000; color: #fff; }
+    .icon--instagram { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
+    .icon--podcast   { background: #8940FA; color: #fff; }
+    .icon--live      { background: #C9932F; color: var(--navy); }
+    .social-platform-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .social-handle {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+    .social-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 24px;
+    }
+    .social-card .btn {
+      font-size: 0.78rem;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .linkedin-live-strip {
+      background: linear-gradient(90deg, rgba(201,147,47,0.08) 0%, rgba(201,147,47,0.03) 100%);
+      border: 1px solid rgba(201,147,47,0.2);
+      border-radius: var(--radius);
+      padding: 36px 48px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+    .live-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .live-dot-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff3b3b;
+      animation: livePulse 1.4s ease-in-out infinite;
+    }
+    @keyframes livePulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.4; transform: scale(0.8); }
+    }
+    .live-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ff3b3b;
+    }
+    .live-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .live-content h4 {
+      color: var(--white);
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .live-content p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--navy); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-left h2 { margin-bottom: 20px; }
+    .contact-left p { margin-bottom: 32px; }
+    .contact-routes { list-style: none; }
+    .contact-routes li {
+      display: flex;
+      flex-direction: column;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .contact-routes li:last-child { border-bottom: none; }
+    .contact-route-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .contact-route-value {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .contact-form {
+      background: var(--navy2);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 13px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(138,155,176,0.4); }
+    .form-group select { cursor: pointer; }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select option { background: var(--navy2); }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 16px;
+      text-align: center;
+    }
+    #form-success {
+      display: none;
+      text-align: center;
+      padding: 40px;
+    }
+    #form-success .check { font-size: 3rem; margin-bottom: 16px; }
+    #form-success h4 { color: var(--gold); margin-bottom: 12px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #070F18;
+      padding: 60px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-brand .logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .footer-brand .logo span { color: var(--gold); }
+    .footer-brand p { font-size: 0.875rem; max-width: 280px; }
+    .footer-tagline {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 20px;
+    }
+    .footer-col h5 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: 0.875rem;
+      color: #7A8FA3;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .social-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .social-link:hover { background: var(--gold); color: var(--navy); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(138,155,176,0.5);
+    }
+    .built-by {
+      font-size: 0.72rem;
+      color: rgba(138,155,176,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .about-grid,
+      .speaking-hero,
+      .framework-intro,
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-stat-pill { right: 16px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .problem-card:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+      .problem-card:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
+      .problem-card:nth-child(2) { border-radius: 0; }
+      .books-grid,
+      .programs-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar .stat-block:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
+      .stats-bar .stat-block:first-child  { border-radius: var(--radius) 0 0 0; }
+      .stats-bar--row2 .stat-block:nth-child(3) { border-radius: 0 0 0 0; }
+      .stats-bar--row2 .stat-block:nth-child(4) { border-radius: 0 0 var(--radius) 0; }
+      .stats-bar--row2 .stat-block:first-child  { border-radius: 0 0 0 var(--radius); }
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
+      .social-card:first-child { border-radius: var(--radius) 0 0 0; }
+      .social-card:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
+      .social-card:nth-child(3) { border-radius: 0 0 0 var(--radius); }
+      .social-card:last-child   { border-radius: 0 0 var(--radius) 0; }
+      .linkedin-live-strip { grid-template-columns: 1fr; gap: 20px; padding: 28px; }
+      .linkedin-live-strip .btn { width: auto; align-self: flex-start; }
+      .stat-block:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
+      .stat-block:nth-child(3) { border-radius: 0 0 0 var(--radius); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .keynotes-grid { grid-template-columns: 1fr; }
+      .keynote-card:first-child,
+      .keynote-card:nth-child(2),
+      .keynote-card:nth-child(3),
+      .keynote-card:last-child { border-radius: 0; }
+      .keynote-card:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+      .keynote-card:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
+      .frameworks-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.8rem; }
+      h2 { font-size: 2rem; }
+      .section { padding: 64px 0; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { text-align: center; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .contact-form { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">Tamien <span>Dysart</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#speaking">Speaking</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#social">Social</a></li>
+        <li><a href="#contact" class="nav-cta">Book Tamien</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMobile()">About</a>
+      <a href="#speaking" onclick="closeMobile()">Speaking</a>
+      <a href="#books" onclick="closeMobile()">Books</a>
+      <a href="#programs" onclick="closeMobile()">Programs</a>
+      <a href="#proof" onclick="closeMobile()">Proof</a>
+      <a href="#contact" onclick="closeMobile()">Book Tamien →</a>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <!-- LEFT: Text -->
+      <div class="hero-text">
+        <p class="hero-eyebrow">Leadership Speaker &nbsp;·&nbsp; Culture Architect &nbsp;·&nbsp; Author</p>
+        <h1 class="hero-headline">
+          Nothing of<br>Significance<br>Happens Without<br><em>Intention.</em>
+        </h1>
+        <p class="hero-sub">
+          Tamien Dysart helps leaders build cultures people don't want to leave — and lives they're proud to live.
+        </p>
+        <p class="hero-identity">CEO, Think 3D Solutions &nbsp;·&nbsp; Founder, Elevate You &nbsp;·&nbsp; Author of <em>Elevate</em></p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn--gold">Book Tamien to Speak</a>
+          <a href="#programs" class="btn btn--outline">Explore Programs</a>
+        </div>
+      </div>
+      <!-- RIGHT: Portrait -->
+      <div class="hero-portrait">
+        <div class="hero-portrait-badge">
+          <span class="badge-num">33→6%</span>
+          <span class="badge-lbl">Turnover<br>Capital One</span>
+        </div>
+        <div class="hero-portrait-frame">
+          <img src="../documents/Tamien-Headshot-1024x683.jpg" alt="Tamien Dysart" />
+        </div>
+        <div class="hero-portrait-accent"></div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ─── AUTHORITY BAR ─── -->
+  <div id="authority" role="marquee" aria-label="Credentials">
+    <div class="authority-track">
+      <!-- repeated twice for seamless loop -->
+      <span class="authority-item">33% → 6% Turnover in 18 Months at Capital One</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Author &nbsp;·&nbsp; Think 3D &amp; Elevate</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Shared Stage with John Maxwell</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Think 3D University</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Leaders of Tomorrow Program</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Power of M.E. Retreat</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">E.L.I.T.E. Mindset</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">15+ Years Fortune 500 Leadership</span>
+      <span class="authority-dot"></span>
+      <!-- duplicate -->
+      <span class="authority-item">33% → 6% Turnover in 18 Months at Capital One</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Author &nbsp;·&nbsp; Think 3D &amp; Elevate</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Shared Stage with John Maxwell</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Think 3D University</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Leaders of Tomorrow Program</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">Power of M.E. Retreat</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">E.L.I.T.E. Mindset</span>
+      <span class="authority-dot"></span>
+      <span class="authority-item">15+ Years Fortune 500 Leadership</span>
+      <span class="authority-dot"></span>
+    </div>
+  </div>
+
+  <!-- ─── PROBLEM ─── -->
+  <section id="problem" class="section">
+    <div class="container">
+      <div class="problem-trigger">
+        <blockquote>
+          <em>"How many of you are currently leading a life that your kids would want to live?"</em>
+        </blockquote>
+        <p class="result">Less than 5% raise their hand. Every time.</p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <p class="label">For the Leader</p>
+          <ul class="pain-list">
+            <li>I feel like I'm surviving, not leading.</li>
+            <li>My best people keep leaving.</li>
+            <li>We have mission, but we don't have momentum.</li>
+            <li>I'm leading others — but I've lost myself.</li>
+          </ul>
+        </div>
+        <div class="problem-card">
+          <p class="label">For the Organization</p>
+          <ul class="pain-list">
+            <li>We invest in training but nothing sticks.</li>
+            <li>High turnover is bleeding us dry.</li>
+            <li>Culture happened by accident — not design.</li>
+            <li>Engagement scores are a warning sign.</li>
+          </ul>
+        </div>
+        <div class="problem-card">
+          <p class="label">For the Individual</p>
+          <ul class="pain-list">
+            <li>I know I'm capable of more — but I'm stuck.</li>
+            <li>I'm living someone else's version of success.</li>
+            <li>I'm performing but not fulfilling.</li>
+            <li>I've confused the default with a decision.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="problem-closer">
+        <div class="divider divider--center"></div>
+        <p>
+          The problem isn't effort. It's that 95% of your actions are driven by emotional state — and nobody ever showed you how to design the state on purpose. Change isn't a willpower problem. It's a wiring problem.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about" class="section section--dark">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <img src="../documents/tamien-speaking-think-3d-1024x1024.jpg" alt="Tamien Dysart leading a workshop" />
+          <div class="about-photo-accent"></div>
+          <div class="about-stat-pill">
+            <span class="number">33→6%</span>
+            <span class="label">Turnover<br>Capital One</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="tag">About Tamien</span>
+          <h2>I Didn't Learn<br>Leadership.<br><span class="gold">I Decided It.</span></h2>
+          <div class="divider"></div>
+          <p>
+            Fifteen years in corporate America taught me one thing clearly: most leaders are winging it. Including me, for a while.
+          </p>
+          <p>
+            Then a $7.99 John Maxwell book at Sam's Club changed everything.
+          </p>
+          <p>
+            I went from watching what not to do on a credit card collections floor to becoming a site director at Capital One — where we reduced employee turnover from 33% to 6% in 18 months. Not by adding a perk. By changing what people came home feeling like.
+          </p>
+          <p>
+            That result didn't come from a program. It came from a decision to invest in culture with the same seriousness that organizations invest in strategy.
+          </p>
+          <p>
+            I've spent the years since turning that insight into a system — for leaders, for organizations, and for the next generation trying to build something real before the rocking chair. Nothing scares me more than unintentional living. So I don't do it. And I help others stop, too.
+          </p>
+          <div class="about-creds">
+            <span class="cred-pill">Author · Think 3D &amp; Elevate</span>
+            <span class="cred-pill">CEO, Think 3D Solutions</span>
+            <span class="cred-pill">Founder, Elevate You</span>
+            <span class="cred-pill">15+ Years Fortune 500</span>
+            <span class="cred-pill">Shared Stage · John Maxwell</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SPEAKING ─── -->
+  <section id="speaking" class="section section--dark2">
+    <div class="container">
+      <div class="speaking-hero">
+        <div>
+          <span class="tag">Keynotes &amp; Workshops</span>
+          <h2>An Experience.<br>Not Just<br><span class="gold">a Talk.</span></h2>
+          <div class="divider"></div>
+          <p>
+            Tamien has one objective when he takes a stage: every person in the room leaves with something they can use before they get home. High energy, structured brilliance, science and soul in the same breath.
+          </p>
+          <div class="formats-strip">
+            <span class="format-tag">Keynotes</span>
+            <span class="format-tag">Half-Day Workshops</span>
+            <span class="format-tag">Full-Day Workshops</span>
+            <span class="format-tag">Retreats</span>
+            <span class="format-tag">Corporate Events</span>
+            <span class="format-tag">Panels</span>
+            <span class="format-tag">Podcast Appearances</span>
+          </div>
+        </div>
+        <img src="../documents/think-3d-podcast-e1646854533412-850x425.jpg" alt="Tamien Dysart on the Think 3D podcast" />
+      </div>
+
+      <div class="keynotes-grid">
+        <div class="keynote-card">
+          <div class="keynote-number">01</div>
+          <h4>Intentional Living in an Autopilot World</h4>
+          <p>60,000 thoughts a day. 90% are repeats from yesterday. This keynote breaks the biology of why we stay stuck — and gives audiences a framework to interrupt it on purpose.</p>
+          <p class="for">For: Conferences · Associations · General Audiences</p>
+        </div>
+        <div class="keynote-card">
+          <div class="keynote-number">02</div>
+          <h4>Culture is Currency</h4>
+          <p>Most organizations invest in training and lose the same people anyway. The problem isn't the program — it's that culture is treated like a soft skill instead of a business strategy.</p>
+          <p class="for">For: Executive Teams · HR Leaders · Organizational Retreats</p>
+        </div>
+        <div class="keynote-card">
+          <div class="keynote-number">03</div>
+          <h4>The 4 A's: Awareness to Amplification</h4>
+          <p>A proven framework for moving individuals and teams from self-awareness to actual impact. Not theory — a repeatable system built from 15+ years of real organizational results.</p>
+          <p class="for">For: Leadership Development Programs · Emerging Leaders</p>
+        </div>
+        <div class="keynote-card">
+          <div class="keynote-number">04</div>
+          <h4>A Better You is Better for Everybody</h4>
+          <p>Personal leadership isn't a personal indulgence — it's an organizational strategy. This session connects individual growth directly to team outcomes, culture, and community ripple effects.</p>
+          <p class="for">For: Company All-Hands · DEI &amp; Culture Events · Nonprofit Teams</p>
+        </div>
+      </div>
+
+      <div class="speaking-book-cta">
+        <a href="#contact" class="btn btn--gold">Book Tamien to Speak</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FRAMEWORK ─── -->
+  <section id="framework" class="section section--dark">
+    <div class="container">
+      <div class="framework-intro">
+        <div>
+          <span class="tag">The System</span>
+          <h2>A System.<br>Not a<br><span class="gold">Speech.</span></h2>
+          <div class="divider"></div>
+          <p>
+            The Integrated Ripple Effect Ecosystem is built to work at every level simultaneously — individual, organization, and community. Because you can't build a culture that outperforms the identity of its leaders.
+          </p>
+          <p>
+            Every engagement starts with the same question: where are you on the arc? From there, the work is structured, sequenced, and built to compound.
+          </p>
+          <p class="gold" style="font-style:italic; margin-top:12px;">"From self-awareness to amplified impact."</p>
+        </div>
+        <div>
+          <div class="ecosystem-visual">
+            <span class="tag" style="border-color: rgba(255,255,255,0.2); color: var(--muted);">The Integrated Ripple Effect</span>
+            <div class="ecosystem-hub">Tamien Dysart</div>
+            <div class="connector-line"></div>
+            <div class="ecosystem-spokes">
+              <div class="spoke">
+                <div class="spoke-label">Elevate You</div>
+                <div class="spoke-mantra">Elevate Self</div>
+              </div>
+              <div class="spoke">
+                <div class="spoke-label">Think 3D</div>
+                <div class="spoke-mantra">Evolve Culture</div>
+              </div>
+              <div class="spoke">
+                <div class="spoke-label">Young Kings</div>
+                <div class="spoke-mantra">Extend Opportunity</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frameworks-grid">
+        <div class="framework-card">
+          <h4>The 4 A's Framework</h4>
+          <p>Awareness → Alignment → Activation → Amplification. Every engagement starts here. The arc that moves individuals and teams from knowing to doing to becoming.</p>
+        </div>
+        <div class="framework-card">
+          <h4>Mindset → Skillset → Culture Set</h4>
+          <p>You can't train your way out of a mindset problem. Tamien works at all three levels because lasting transformation requires all three layers to shift together.</p>
+        </div>
+        <div class="framework-card">
+          <h4>E.L.I.T.E. Mindset</h4>
+          <p>Everything Leads Incrementally Toward Excellence. Progress, not perfection. Compounding, not shortcuts. The math of the long game laid out in five words.</p>
+        </div>
+        <div class="framework-card">
+          <h4>The SUCCEED Framework</h4>
+          <p>Sacrifice · Uncommon · Connections · Courageous Commitment · Enthusiasm · Expectations · Discipline. Seven anchors for leaders building something that lasts.</p>
+        </div>
+        <div class="framework-card">
+          <h4>Symphony of Life</h4>
+          <p>Every person in the room plays a different instrument. The question isn't whether a culture will emerge — it's whether anyone is conducting it with intention.</p>
+        </div>
+        <div class="framework-card">
+          <h4>The Two Fires</h4>
+          <p>"Whichever fire you choose to place your log on is going to burn the brightest." Where you invest your energy is not a neutral decision. It never was.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BOOKS ─── -->
+  <section id="books" class="section section--dark2">
+    <div class="container">
+      <div class="books-intro">
+        <span class="tag">The Books</span>
+        <h2>The Work,<br><span class="gold">On Paper.</span></h2>
+        <div class="divider divider--center"></div>
+        <p>Two books. Two audiences. One interconnected mission — to make intentional living and culture-building accessible, systematic, and measurable.</p>
+      </div>
+
+      <div class="books-grid">
+
+        <!-- THINK 3D -->
+        <div class="book-card book-card--think3d">
+          <div class="book-cover-wrap book-cover-wrap--think3d">
+            <img src="../images/Think3D Book Cover.png" alt="Think 3D book cover by Tamien Dysart" />
+          </div>
+          <div class="book-card-body">
+            <div class="book-brand-tag--think3d">Think 3D Solutions</div>
+            <h3>Think 3D</h3>
+            <p class="book-subtitle">A Radically New Approach to Maximizing the Potential of Your Team</p>
+            <p>
+              Built for organizational leaders who are done wondering why training doesn't stick. Think 3D gives teams a framework to move from reactive management to intentional, high-performance culture.
+            </p>
+            <blockquote class="book-quote">
+              "A culture will emerge whether intended or not — but if it's not one you invest in, it will certainly be one you pay for."
+            </blockquote>
+            <div class="book-cta-row">
+              <a href="https://www.amazon.com/Think-3D-Radically-Maximizing-Potential-ebook/dp/B01GP205WO" target="_blank" rel="noopener" class="btn btn--gold">Get Think 3D on Amazon →</a>
+              <span class="book-audience">For: Leaders · HR Teams · Culture Builders</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ELEVATE -->
+        <div class="book-card book-card--elevate">
+          <div class="book-cover-wrap book-cover-wrap--elevate">
+            <img src="../images/Elevate - Book Cover.png" alt="Elevate book cover by Tamien Dysart" />
+          </div>
+          <div class="book-card-body">
+            <div class="book-brand-tag--elevate">Elevate You</div>
+            <h3>Elevate</h3>
+            <p class="book-subtitle">Design Your Life Through the Power of Intentional Thinking (2023)</p>
+            <p>
+              This book is not about motivation. It's about architecture. It gives readers the science behind why they're stuck and a system for rebuilding by design — from the 4 A's to the biology of identity.
+            </p>
+            <blockquote class="book-quote">
+              "Discipline is the bridge that takes you from where you are to where you want to go."
+            </blockquote>
+            <div class="book-cta-row">
+              <a href="https://www.amazon.com/Elevate-Design-through-Intentional-Thinking-ebook/dp/B0BTWMQ2XL?ref_=ast_author_dp&th=1&psc=1" target="_blank" rel="noopener" class="btn btn--gold">Get Elevate on Amazon →</a>
+              <span class="book-audience">For: Individuals · Emerging Leaders · Anyone Ready for More</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROGRAMS ─── -->
+  <section id="programs" class="section section--dark">
+    <div class="container">
+      <div class="programs-header">
+        <span class="tag">Programs &amp; Services</span>
+        <h2>Built for<br><span class="gold">Where You Are.</span></h2>
+        <div class="divider divider--center"></div>
+        <p>Whether you're building a high-performance culture inside an organization, or redesigning your own life from the inside out — there is a path built for you.</p>
+      </div>
+
+      <div class="programs-grid">
+        <!-- THINK 3D -->
+        <div class="program-card program-card--think3d">
+          <div class="program-card-top">
+            <div class="program-icon">🏗</div>
+            <p class="program-audience program-audience--think3d">For Organizations &amp; Leaders</p>
+            <h3>Think 3D Solutions</h3>
+            <p class="program-tagline program-tagline--think3d">Evolve Your Culture</p>
+          </div>
+          <div class="program-distinction program-distinction--think3d">
+            Think 3D is for <strong style="color:var(--white)">organizations</strong> — teams, companies, and institutions ready to stop paying for a culture they never intentionally built.
+          </div>
+          <div class="program-card-body">
+            <p>
+              Culture consulting, leadership development, and training for organizations ready to make culture a measurable asset — not an afterthought. Built around one truth: what leaders invest in intentionally, sticks.
+            </p>
+            <ul class="program-list">
+              <li>Think 3D University — leadership development curriculum</li>
+              <li>Leaders of Tomorrow (LOT) Program</li>
+              <li>Power of Culture Workshop</li>
+              <li>Symphony of Life Facilitation</li>
+              <li>SUCCEED — Executive Leadership Framework</li>
+              <li>Culture Consulting Engagements</li>
+            </ul>
+            <a href="#contact" class="btn btn--gold" onclick="document.getElementById('interest').value='think3d'">Build Your Culture →</a>
+          </div>
+        </div>
+
+        <!-- ELEVATE YOU -->
+        <div class="program-card program-card--elevate">
+          <div class="program-card-top">
+            <div class="program-icon">⬆️</div>
+            <p class="program-audience program-audience--elevate">For Individuals &amp; Emerging Leaders</p>
+            <h3>Elevate You</h3>
+            <p class="program-tagline program-tagline--elevate">Elevate Your Self-Leadership</p>
+          </div>
+          <div class="program-distinction program-distinction--elevate">
+            Elevate You is for <strong style="color:var(--white)">individuals</strong> — high-achievers and emerging leaders who are done living on autopilot and ready to design their life with intention.
+          </div>
+          <div class="program-card-body">
+            <p>
+              The self-leadership platform, book, and retreat series for high-achievers living someone else's version of success. Rooted in neuroscience. Built for people who are ready to move from surviving to designing.
+            </p>
+            <ul class="program-list">
+              <li>Power of M.E. Retreat</li>
+              <li>E.L.I.T.E. Mindset Retreat</li>
+              <li>Self-Leadership Workshop Series</li>
+              <li>Intentional Living Online Curriculum</li>
+              <li>Book: <em>Elevate</em> (2023)</li>
+              <li>Elevate You App (Coming Soon)</li>
+            </ul>
+            <a href="#contact" class="btn btn--gold" onclick="document.getElementById('interest').value='elevateyou'">Start Elevating →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROOF ─── -->
+  <section id="proof" class="section section--dark2">
+    <div class="container">
+      <span class="tag">Results &amp; Proof</span>
+      <h2>The Math<br><span class="gold">Doesn't Lie.</span></h2>
+      <div class="divider"></div>
+
+      <div class="stats-bar">
+        <div class="stat-block">
+          <span class="stat-number">33<span class="stat-arrow">→</span>6%</span>
+          <span class="stat-label">Employee Turnover Reduced at Capital One in 18 Months</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">1,000+</span>
+          <span class="stat-label">Program Graduates Across Think 3D &amp; Elevate You</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Speaking Events Delivered Across Industries &amp; Stages</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Seminars, Workshops &amp; Talks Given Over 15+ Years</span>
+        </div>
+      </div>
+      <div class="stats-bar stats-bar--row2">
+        <div class="stat-block">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Years of Fortune 500 &amp; Organizational Leadership</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Published Books — Think 3D &amp; Elevate</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Books Read Per Year — Practices What He Teaches</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Active Ecosystems — Individual, Organization &amp; Community</span>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p>Tamien doesn't just talk about culture — he builds it. Our team walked away with a framework they actually use. The shift was visible within weeks.</p>
+          <div class="testimonial-author">Leadership Retreat Participant</div>
+          <div class="testimonial-role">Corporate Executive</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p>The Power of M.E. retreat was the first time I stopped and genuinely asked myself what I was building. That question changed everything for me.</p>
+          <div class="testimonial-author">Power of M.E. Alumni</div>
+          <div class="testimonial-role">Emerging Leader</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p>What separates Tamien is that he's lived it. There's no gap between what he teaches and how he operates. That credibility lands differently in the room.</p>
+          <div class="testimonial-author">Think 3D Client</div>
+          <div class="testimonial-role">Nonprofit Executive Director</div>
+        </div>
+      </div>
+
+      <div class="media-proof-strip">
+        <p class="media-proof-label">As Heard On &amp; Featured In</p>
+        <div class="media-proof-image-wrap">
+          <img src="../documents/think-3d-podcast-e1646854533412-850x425.jpg" alt="Tamien Dysart on the Think 3D podcast" />
+          <div class="media-proof-caption">Think 3D Podcast — Leadership, Culture &amp; Amplified Impact</div>
+        </div>
+      </div>
+
+      <div class="signature-quote">
+        <blockquote>
+          "A culture will emerge whether you intend it or not. The question is: are you the one building it?"
+        </blockquote>
+        <cite>— Tamien Dysart</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SOCIAL PROOF ─── -->
+  <section id="social" class="section section--dark">
+    <div class="container">
+      <div class="social-header">
+        <span class="tag">Follow the Work</span>
+        <h2>The Conversation<br><span class="gold">Is Live.</span></h2>
+        <div class="divider divider--center"></div>
+        <p>Tamien shows up consistently — on stage, online, and in your feed. Follow along for weekly leadership insights, culture frameworks, and real talk on intentional living.</p>
+      </div>
+
+      <!-- LinkedIn Live Strip -->
+      <div class="linkedin-live-strip">
+        <div class="live-badge">
+          <div class="live-dot-wrap">
+            <div class="live-dot"></div>
+            <span class="live-label">Live</span>
+          </div>
+          <span class="live-sub">LinkedIn Live</span>
+        </div>
+        <div class="live-content">
+          <h4>Leadership Conversations — Live on LinkedIn</h4>
+          <p>Tamien hosts regular LinkedIn Live sessions covering culture, intentional leadership, and real-time Q&amp;A. No slides. No scripts. Just the work, in real time.</p>
+        </div>
+        <a href="https://www.linkedin.com/in/tamien-dysart" target="_blank" rel="noopener" class="btn btn--gold">Join on LinkedIn →</a>
+      </div>
+
+      <!-- Platform Cards -->
+      <div class="social-grid">
+
+        <div class="social-card">
+          <div class="social-platform-icon icon--linkedin">in</div>
+          <div class="social-platform-name">LinkedIn</div>
+          <div class="social-handle">@tamien-dysart</div>
+          <p>Weekly thought leadership on culture, identity, and intentional leadership. The highest-trust platform for executives, HR leaders, and organizational buyers.</p>
+          <a href="https://www.linkedin.com/in/tamien-dysart" target="_blank" rel="noopener" class="btn btn--gold">Connect →</a>
+        </div>
+
+        <div class="social-card">
+          <div class="social-platform-icon icon--youtube">▶</div>
+          <div class="social-platform-name">YouTube</div>
+          <div class="social-handle">@think3dsolutions</div>
+          <p>Full-length keynotes, workshop sessions, and leadership deep-dives. The content library that shows what happens in the room when Tamien is in it.</p>
+          <a href="https://www.youtube.com/@think3dsolutions" target="_blank" rel="noopener" class="btn btn--gold">Subscribe →</a>
+        </div>
+
+        <div class="social-card">
+          <div class="social-platform-icon icon--instagram">ig</div>
+          <div class="social-platform-name">Instagram</div>
+          <div class="social-handle">@tamiendysart</div>
+          <p>Behind-the-scenes culture moments, signature frameworks in short form, and the daily practice of what Tamien teaches. Proof that the work never stops.</p>
+          <a href="https://www.instagram.com/tamiendysart" target="_blank" rel="noopener" class="btn btn--gold">Follow →</a>
+        </div>
+
+        <div class="social-card">
+          <div class="social-platform-icon icon--podcast">♪</div>
+          <div class="social-platform-name">Podcast</div>
+          <div class="social-handle">Think 3D Podcast</div>
+          <p>Long-form conversations on leadership, culture, and amplified impact. Guests, frameworks, and the kind of insight that doesn't fit in a caption.</p>
+          <a href="https://www.youtube.com/@think3dsolutions" target="_blank" rel="noopener" class="btn btn--gold">Listen →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact" class="section section--dark">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <span class="tag">Let's Connect</span>
+          <h2>Let's Build<br>Something<br><span class="gold">Intentional.</span></h2>
+          <div class="divider"></div>
+          <p>Whether you're booking a keynote, exploring a culture program for your organization, or looking to elevate your personal leadership — start here. Tamien personally responds to every speaking inquiry.</p>
+
+          <ul class="contact-routes">
+            <li>
+              <span class="contact-route-label">Speaking &amp; Think 3D Inquiries</span>
+              <span class="contact-route-value">tamien@letsthink3d.com</span>
+            </li>
+            <li>
+              <span class="contact-route-label">Elevate You &amp; Personal Development</span>
+              <span class="contact-route-value">tamien@goelevateyou.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="First &amp; Last Name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="org">Organization / Company</label>
+              <input type="text" id="org" name="org" placeholder="Optional" />
+            </div>
+            <div class="form-group">
+              <label for="interest">I'm Interested In</label>
+              <select id="interest" name="interest" required onchange="updateRouting()">
+                <option value="" disabled selected>Select one...</option>
+                <option value="speaking">Booking Tamien to Speak</option>
+                <option value="think3d">Think 3D — Culture &amp; Leadership Consulting</option>
+                <option value="elevateyou">Elevate You — Personal Development / Retreats</option>
+                <option value="media">Media / Podcast / Interview</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div id="routing-note" style="display:none; margin-bottom:16px; padding:12px 16px; background:rgba(201,147,47,0.08); border-radius:var(--radius); border-left:3px solid var(--gold); font-size:0.82rem; color:var(--muted);">
+            </div>
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea id="message" name="message" placeholder="Tell Tamien about your event, organization, or what you're looking to build..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold" style="width:100%; font-size:1rem;">Send Message →</button>
+            <p class="form-note">Tamien personally responds to every speaking inquiry.</p>
+          </form>
+          <div id="form-success">
+            <div class="check">✓</div>
+            <h4>Message Sent.</h4>
+            <p>Tamien will be in touch shortly. In the meantime, explore the books or follow along on LinkedIn.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">Tamien <span>Dysart</span></div>
+          <p>Leadership Speaker. Culture Architect. Author. Building systems that move individuals, organizations, and communities from autopilot to amplified impact.</p>
+          <p class="footer-tagline">From self-awareness to amplified impact.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#speaking">Speaking</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#programs">Think 3D</a></li>
+            <li><a href="#programs">Elevate You</a></li>
+            <li><a href="#proof">Proof</a></li>
+            <li><a href="#contact">Book Tamien</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/tamien-dysart" target="_blank" rel="noopener" class="social-link" title="LinkedIn">in</a>
+            <a href="https://www.instagram.com/tamiendysart" target="_blank" rel="noopener" class="social-link" title="Instagram">ig</a>
+            <a href="https://www.youtube.com/@think3dsolutions" target="_blank" rel="noopener" class="social-link" title="YouTube">yt</a>
+            <a href="https://www.facebook.com/tamien.dysart" target="_blank" rel="noopener" class="social-link" title="Facebook">fb</a>
+          </div>
+          <ul class="footer-links">
+            <li><a href="mailto:tamien@letsthink3d.com">tamien@letsthink3d.com</a></li>
+            <li><a href="mailto:tamien@goelevateyou.com">tamien@goelevateyou.com</a></li>
+            <li><a href="https://www.letsthink3d.com" target="_blank" rel="noopener">letsthink3d.com</a></li>
+            <li><a href="https://www.goelevateyou.com" target="_blank" rel="noopener">goelevateyou.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Tamien Dysart · Think 3D Solutions · Elevate You · All Rights Reserved.</p>
+        <p class="built-by">Built by StreamLab AI</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── JS ─── -->
+  <script>
+    // Sticky nav
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // Contact form routing note
+    const routingMessages = {
+      speaking:    { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — Tamien\'s speaking team.', email: 'tamien@letsthink3d.com' },
+      think3d:     { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — Think 3D Solutions.', email: 'tamien@letsthink3d.com' },
+      elevateyou:  { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@goelevateyou.com</strong> — Elevate You.', email: 'tamien@goelevateyou.com' },
+      media:       { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — media &amp; press.', email: 'tamien@letsthink3d.com' },
+      other:       { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong>.', email: 'tamien@letsthink3d.com' },
+    };
+
+    function updateRouting() {
+      const val = document.getElementById('interest').value;
+      const note = document.getElementById('routing-note');
+      if (val && routingMessages[val]) {
+        note.innerHTML = routingMessages[val].msg;
+        note.style.display = 'block';
+      } else {
+        note.style.display = 'none';
+      }
+    }
+
+    // Form submit — mailto fallback (replace with Formspree endpoint for production)
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name    = document.getElementById('name').value;
+      const email   = document.getElementById('email').value;
+      const org     = document.getElementById('org').value;
+      const interest = document.getElementById('interest').value;
+      const message = document.getElementById('message').value;
+
+      const routing = routingMessages[interest] || routingMessages['other'];
+      const to = routing.email;
+
+      const subject = encodeURIComponent(`Website Inquiry — ${interest} — ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nOrganization: ${org || 'Not provided'}\nInterest: ${interest}\n\nMessage:\n${message || 'No message provided.'}`
+      );
+
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+
+      // Show success state
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+
+    // Scroll-reveal (lightweight, no library)
+    const revealEls = document.querySelectorAll(
+      '.problem-card, .keynote-card, .framework-card, .book-card, .program-card, .stat-block, .testimonial-card, .about-grid, .speaking-hero'
+    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
