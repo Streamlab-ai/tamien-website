@@ -635,6 +635,33 @@
       margin-top: 56px;
       text-align: center;
     }
+    .speaking-video-wrap {
+      margin-top: 64px;
+    }
+    .speaking-video-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+      border: 1px solid rgba(201,147,47,0.15);
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
 
     /* ─── FRAMEWORK ─── */
     #framework { background: var(--navy); }
@@ -1679,6 +1706,18 @@
           <h4>A Better You is Better for Everybody</h4>
           <p>Personal leadership isn't a personal indulgence — it's an organizational strategy. This session connects individual growth directly to team outcomes, culture, and community ripple effects.</p>
           <p class="for">For: Company All-Hands · DEI &amp; Culture Events · Nonprofit Teams</p>
+        </div>
+      </div>
+
+      <div class="speaking-video-wrap">
+        <p class="speaking-video-label">Watch Tamien in Action</p>
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/EeWXlc9_j1A"
+            title="Tamien Dysart — Watch Him in Action"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
 
