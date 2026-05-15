@@ -1505,7 +1505,7 @@
         <p class="hero-identity">CEO, Think 3D Solutions &nbsp;·&nbsp; Founder, Elevate You &nbsp;·&nbsp; Author of <em>Elevate</em></p>
         <div class="hero-ctas">
           <a href="#contact" class="btn btn--gold">Book Tamien to Speak</a>
-          <a href="#programs" class="btn btn--outline">Explore Programs</a>
+          <a href="#contact" class="btn btn--outline" onclick="setTimeout(()=>{document.getElementById('interest').value='conversation';updateRouting();},50)">Start a Conversation</a>
         </div>
       </div>
       <!-- RIGHT: Portrait -->
@@ -1722,7 +1722,8 @@
       </div>
 
       <div class="speaking-book-cta">
-        <a href="#contact" class="btn btn--gold">Book Tamien to Speak</a>
+        <a href="#contact" class="btn btn--gold" onclick="setTimeout(()=>{document.getElementById('interest').value='speaking';updateRouting();},50)">Book Tamien to Speak</a>
+        <a href="#contact" class="btn btn--outline-gold" onclick="setTimeout(()=>{document.getElementById('interest').value='podcast';updateRouting();},50)">Invite Tamien to Your Podcast</a>
       </div>
     </div>
   </section>
@@ -1823,7 +1824,7 @@
               "A culture will emerge whether intended or not — but if it's not one you invest in, it will certainly be one you pay for."
             </blockquote>
             <div class="book-cta-row">
-              <a href="https://www.amazon.com/Think-3D-Radically-Maximizing-Potential-ebook/dp/B01GP205WO" target="_blank" rel="noopener" class="btn btn--gold">Get Think 3D on Amazon →</a>
+              <a href="https://www.amazon.com/Think-3D-Radically-Maximizing-Potential-ebook/dp/B01GP205WO" target="_blank" rel="noopener" class="btn btn--gold">Read / Buy Think 3D →</a>
               <span class="book-audience">For: Leaders · HR Teams · Culture Builders</span>
             </div>
           </div>
@@ -1845,7 +1846,7 @@
               "Discipline is the bridge that takes you from where you are to where you want to go."
             </blockquote>
             <div class="book-cta-row">
-              <a href="https://www.amazon.com/Elevate-Design-through-Intentional-Thinking-ebook/dp/B0BTWMQ2XL?ref_=ast_author_dp&th=1&psc=1" target="_blank" rel="noopener" class="btn btn--gold">Get Elevate on Amazon →</a>
+              <a href="https://www.amazon.com/Elevate-Design-through-Intentional-Thinking-ebook/dp/B0BTWMQ2XL?ref_=ast_author_dp&th=1&psc=1" target="_blank" rel="noopener" class="btn btn--gold">Read / Buy Elevate →</a>
               <span class="book-audience">For: Individuals · Emerging Leaders · Anyone Ready for More</span>
             </div>
           </div>
@@ -1889,7 +1890,7 @@
               <li>SUCCEED — Executive Leadership Framework</li>
               <li>Culture Consulting Engagements</li>
             </ul>
-            <a href="#contact" class="btn btn--gold" onclick="document.getElementById('interest').value='think3d'">Build Your Culture →</a>
+            <a href="#contact" class="btn btn--gold" onclick="document.getElementById('interest').value='think3d';updateRouting()">Explore Leadership &amp; Culture Programs →</a>
           </div>
         </div>
 
@@ -1916,7 +1917,7 @@
               <li>Book: <em>Elevate</em> (2023)</li>
               <li>Elevate You App (Coming Soon)</li>
             </ul>
-            <a href="#contact" class="btn btn--gold" onclick="document.getElementById('interest').value='elevateyou'">Start Elevating →</a>
+            <a href="#contact" class="btn btn--gold" onclick="document.getElementById('interest').value='elevateyou';updateRouting()">Bring Tamien to Your Organization →</a>
           </div>
         </div>
       </div>
@@ -2063,7 +2064,7 @@
           <div class="social-platform-name">Podcast</div>
           <div class="social-handle">Think 3D Podcast</div>
           <p>Long-form conversations on leadership, culture, and amplified impact. Guests, frameworks, and the kind of insight that doesn't fit in a caption.</p>
-          <a href="https://www.youtube.com/@think3dsolutions" target="_blank" rel="noopener" class="btn btn--gold">Listen →</a>
+          <a href="#contact" class="btn btn--gold" onclick="setTimeout(()=>{document.getElementById('interest').value='podcast';updateRouting();},50)">Invite Tamien to Your Podcast →</a>
         </div>
 
       </div>
@@ -2112,11 +2113,13 @@
               <label for="interest">I'm Interested In</label>
               <select id="interest" name="interest" required onchange="updateRouting()">
                 <option value="" disabled selected>Select one...</option>
-                <option value="speaking">Booking Tamien to Speak</option>
-                <option value="think3d">Think 3D — Culture &amp; Leadership Consulting</option>
+                <option value="speaking">Book Tamien to Speak</option>
+                <option value="organization">Bring Tamien to Your Organization</option>
+                <option value="think3d">Explore Leadership &amp; Culture Programs</option>
                 <option value="elevateyou">Elevate You — Personal Development / Retreats</option>
-                <option value="media">Media / Podcast / Interview</option>
-                <option value="other">Other</option>
+                <option value="podcast">Invite Tamien to Your Podcast</option>
+                <option value="books">Read / Buy the Books</option>
+                <option value="conversation">Start a Conversation</option>
               </select>
             </div>
             <div id="routing-note" style="display:none; margin-bottom:16px; padding:12px 16px; background:rgba(201,147,47,0.08); border-radius:var(--radius); border-left:3px solid var(--gold); font-size:0.82rem; color:var(--muted);">
@@ -2146,6 +2149,10 @@
           <div class="logo">Tamien <span>Dysart</span></div>
           <p>Leadership Speaker. Culture Architect. Author. Building systems that move individuals, organizations, and communities from autopilot to amplified impact.</p>
           <p class="footer-tagline">From self-awareness to amplified impact.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+            <a href="#contact" class="btn btn--gold" style="font-size:0.82rem;padding:10px 20px;" onclick="setTimeout(()=>{document.getElementById('interest').value='speaking';updateRouting();},50)">Book Tamien to Speak</a>
+            <a href="#contact" class="btn btn--outline" style="font-size:0.82rem;padding:10px 20px;" onclick="setTimeout(()=>{document.getElementById('interest').value='conversation';updateRouting();},50)">Start a Conversation</a>
+          </div>
         </div>
         <div class="footer-col">
           <h5>Navigate</h5>
@@ -2202,11 +2209,13 @@
 
     // Contact form routing note
     const routingMessages = {
-      speaking:    { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — Tamien\'s speaking team.', email: 'tamien@letsthink3d.com' },
-      think3d:     { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — Think 3D Solutions.', email: 'tamien@letsthink3d.com' },
-      elevateyou:  { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@goelevateyou.com</strong> — Elevate You.', email: 'tamien@goelevateyou.com' },
-      media:       { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — media &amp; press.', email: 'tamien@letsthink3d.com' },
-      other:       { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong>.', email: 'tamien@letsthink3d.com' },
+      speaking:      { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — Tamien\'s speaking team.', email: 'tamien@letsthink3d.com' },
+      organization:  { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — Think 3D Solutions.', email: 'tamien@letsthink3d.com' },
+      think3d:       { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — Think 3D Solutions.', email: 'tamien@letsthink3d.com' },
+      elevateyou:    { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@goelevateyou.com</strong> — Elevate You.', email: 'tamien@goelevateyou.com' },
+      podcast:       { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong> — podcast &amp; media.', email: 'tamien@letsthink3d.com' },
+      books:         { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong>.', email: 'tamien@letsthink3d.com' },
+      conversation:  { msg: 'Your inquiry will be routed to <strong style="color:var(--white)">tamien@letsthink3d.com</strong>.', email: 'tamien@letsthink3d.com' },
     };
 
     function updateRouting() {
