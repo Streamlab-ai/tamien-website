@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tamien Dysart | Leadership Speaker & Culture Architect</title>
-  <meta name="description" content="Tamien Dysart helps leaders build cultures people don't want to leave — and lives they're proud to live. Book Tamien to speak, explore Think 3D Solutions, or discover Elevate You." />
+  <meta name="description" content="Tamien Dysart helps organizations build better leaders and install better behavior. Explore Think 3D Leadership Development and Elevate You Behavioral Installation." />
   <meta property="og:title" content="Tamien Dysart | Leadership Speaker & Culture Architect" />
-  <meta property="og:description" content="From self-awareness to amplified impact — for the individual, the organization, and the community." />
+  <meta property="og:description" content="Build better leaders. Install better behavior." />
   <meta property="og:image" content="assets/tamien-speaking-think-3d-1024x1024.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -209,7 +209,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('assets/tamien-speaking-think-3d-1024x1024.jpg');
+      background-image: url('assets/CC3.jpeg');
       background-size: cover;
       background-position: center 30%;
       filter: brightness(0.15);
@@ -418,77 +418,108 @@
       opacity: 0.5;
     }
 
-    /* ─── PROBLEM ─── */
-    #problem { background: var(--navy2); }
-    .problem-trigger {
-      text-align: center;
-      padding: 60px 0 48px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      margin-bottom: 64px;
-    }
-    .problem-trigger blockquote {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.6rem, 4vw, 2.8rem);
-      color: var(--white);
-      max-width: 760px;
-      margin: 0 auto 16px;
-      line-height: 1.2;
-    }
-    .problem-trigger blockquote em { font-style: italic; color: var(--gold); }
-    .problem-trigger .result {
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 600;
-    }
-    .problem-grid {
+    /* ─── GATEWAY ─── */
+    #gateway { background: var(--navy2); }
+    .gateway-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-bottom: 64px;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
     }
-    .problem-card {
-      background: var(--navy3);
-      padding: 40px 32px;
+    .gateway-card {
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    .problem-card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
-    .problem-card:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
-    .problem-card .label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
+    .gateway-card--think3d {
+      background: var(--navy);
+      border: 1px solid rgba(201,147,47,0.25);
+      border-left: 4px solid var(--gold);
     }
-    .pain-list { list-style: none; }
-    .pain-list li {
+    .gateway-card--elevateyou {
+      background: var(--navy);
+      border: 1px solid rgba(26,111,232,0.25);
+      border-left: 4px solid var(--blue);
+    }
+    .gateway-card h3 { color: var(--white); margin-bottom: 4px; }
+    .gateway-card p { font-size: 1rem; margin-bottom: 8px; flex-grow: 1; }
+
+    /* ─── THINK 3D / ELEVATE YOU SECTIONS ─── */
+    .think3d-callout {
+      background: rgba(201,147,47,0.08);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .think3d-callout p { font-size: 0.95rem; color: var(--white); margin: 0; }
+    .think3d-callout strong { color: var(--gold); }
+    .think3d-list {
+      list-style: none;
+      margin: 0 0 8px;
+    }
+    .think3d-list li {
       font-size: 0.975rem;
       color: #A0B4C8;
-      padding: 10px 0;
+      padding: 10px 0 10px 24px;
       border-bottom: 1px solid rgba(255,255,255,0.05);
-      padding-left: 20px;
       position: relative;
       line-height: 1.5;
     }
-    .pain-list li::before {
-      content: '';
+    .think3d-list li::before {
+      content: '→';
       position: absolute;
-      left: 0; top: 50%;
-      transform: translateY(-50%);
-      width: 6px; height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
     }
-    .pain-list li:last-child { border-bottom: none; }
-    .problem-closer {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
+    .think3d-list li:last-child { border-bottom: none; }
+    .elevateyou-anchors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0;
     }
-    .problem-closer p { font-size: 1.1rem; }
+    .elevateyou-anchors span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      border: 1px solid rgba(26,111,232,0.4);
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+    .elevateyou-process {
+      background: rgba(26,111,232,0.08);
+      border-left: 3px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      color: #A0B4C8;
+      margin-top: 16px;
+    }
+    .elevateyou-process strong { color: var(--white); }
+
+    /* ─── FINAL CTA ─── */
+    #final-cta { background: var(--navy3); }
+    .final-cta-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+    .final-cta-inner h2 { margin-bottom: 0; }
+    .final-cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin: 48px 0 32px;
+    }
+    .final-cta-mantra {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--muted);
+    }
 
     /* ─── ABOUT ─── */
     #about { background: var(--navy); }
@@ -663,90 +694,6 @@
       border: 0;
     }
 
-    /* ─── FRAMEWORK ─── */
-    #framework { background: var(--navy); }
-    .framework-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      margin-bottom: 72px;
-    }
-    .ecosystem-visual {
-      background: var(--navy2);
-      border: 1px solid rgba(201,147,47,0.15);
-      border-radius: var(--radius);
-      padding: 48px 40px;
-      text-align: center;
-    }
-    .ecosystem-hub {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 12px 28px;
-      border-radius: var(--radius);
-      margin-bottom: 32px;
-    }
-    .ecosystem-spokes {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .spoke {
-      background: var(--navy3);
-      padding: 20px 16px;
-      border-radius: var(--radius);
-      border-top: 3px solid var(--gold);
-    }
-    .spoke .spoke-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-    .spoke .spoke-mantra {
-      font-size: 0.7rem;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .connector-line {
-      width: 1px;
-      height: 24px;
-      background: rgba(201,147,47,0.4);
-      margin: 0 auto;
-    }
-    .frameworks-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .framework-card {
-      background: var(--navy2);
-      border: 1px solid rgba(201,147,47,0.1);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: border-color 0.2s;
-    }
-    .framework-card:hover { border-color: rgba(201,147,47,0.4); }
-    .framework-card h4 {
-      color: var(--gold);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .framework-card p { font-size: 0.9rem; }
-
     /* ─── BOOKS ─── */
     #books { background: var(--navy2); }
     .books-intro { text-align: center; max-width: 600px; margin: 0 auto 64px; }
@@ -859,101 +806,7 @@
       color: var(--muted);
     }
 
-    /* ─── PROGRAMS ─── */
-    #programs { background: var(--navy); }
-    .programs-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
 
-    /* Subgrid: forces top / distinction / body to share row heights across both cards */
-    .programs-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto 1fr;
-      gap: 0 32px;
-    }
-    .program-card {
-      display: grid;
-      grid-template-rows: subgrid;
-      grid-row: span 3;
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .program-card--think3d {
-      background: linear-gradient(135deg, #0f2847 0%, #0D1B2A 100%);
-      border: 1px solid rgba(26,111,232,0.25);
-    }
-    .program-card--elevate {
-      background: linear-gradient(135deg, #241808 0%, #1a1208 100%);
-      border: 1px solid rgba(201,147,47,0.3);
-    }
-    .program-card-top {
-      padding: 44px 40px 28px;
-    }
-    .program-icon {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-    .program-audience {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .program-audience--think3d { color: #6AA8FF; }
-    .program-audience--elevate  { color: var(--gold); }
-    .program-card h3 {
-      color: var(--white);
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-    .program-tagline {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .program-tagline--think3d { color: #6AA8FF; }
-    .program-tagline--elevate  { color: var(--gold); }
-    .program-distinction {
-      margin: 0 40px;
-      background: rgba(255,255,255,0.04);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      font-size: 0.875rem;
-      color: #A0B4C8;
-      border-left: 3px solid;
-      align-self: start;
-    }
-    .program-distinction--think3d { border-color: #1A6FE8; }
-    .program-distinction--elevate  { border-color: var(--gold); }
-    .program-card-body {
-      padding: 28px 40px 40px;
-      display: flex;
-      flex-direction: column;
-    }
-    .program-card-body p { font-size: 0.975rem; margin-bottom: 24px; }
-    .program-list {
-      list-style: none;
-      flex: 1;
-      margin-bottom: 0;
-    }
-    .program-list li {
-      font-size: 0.875rem;
-      color: var(--muted);
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .program-list li::before {
-      content: '→';
-      color: var(--gold);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .program-list li:last-child { border-bottom: none; }
-    .program-card-body .btn { margin-top: 32px; align-self: flex-start; }
 
     /* ─── PROOF ─── */
     #proof { background: var(--navy2); }
@@ -1412,15 +1265,12 @@
     @media (max-width: 960px) {
       .about-grid,
       .speaking-hero,
-      .framework-intro,
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-grid[style*="1.15fr"] { grid-template-columns: 1fr; }
       .about-stat-pill { right: 16px; }
-      .problem-grid { grid-template-columns: 1fr; }
-      .problem-card:first-child { border-radius: var(--radius) var(--radius) 0 0; }
-      .problem-card:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
-      .problem-card:nth-child(2) { border-radius: 0; }
-      .books-grid,
-      .programs-grid { grid-template-columns: 1fr; }
+      .gateway-grid { grid-template-columns: 1fr; }
+      .books-grid { grid-template-columns: 1fr; }
+      .final-cta-buttons { flex-direction: column; align-items: center; }
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
       .stats-bar .stat-block:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
       .stats-bar .stat-block:first-child  { border-radius: var(--radius) 0 0 0; }
@@ -1444,7 +1294,6 @@
       .keynote-card:last-child { border-radius: 0; }
       .keynote-card:first-child { border-radius: var(--radius) var(--radius) 0 0; }
       .keynote-card:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
-      .frameworks-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .form-row { grid-template-columns: 1fr; }
     }
@@ -1464,14 +1313,13 @@
   <!-- ─── NAV ─── -->
   <nav id="nav">
     <div class="nav-inner">
-      <div class="nav-logo">Tamien <span>Dysart</span></div>
+      <a href="#" class="nav-logo">Tamien <span>Dysart</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#speaking">Speaking</a></li>
-        <li><a href="#books">Books</a></li>
-        <li><a href="#programs">Programs</a></li>
+        <li><a href="#think3d">Think 3D</a></li>
+        <li><a href="#elevateyou">Elevate You</a></li>
         <li><a href="#proof">Proof</a></li>
-        <li><a href="#social">Social</a></li>
         <li><a href="#contact" class="nav-cta">Book Tamien</a></li>
       </ul>
       <div class="hamburger" id="hamburger" aria-label="Open menu">
@@ -1481,8 +1329,8 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="#about" onclick="closeMobile()">About</a>
       <a href="#speaking" onclick="closeMobile()">Speaking</a>
-      <a href="#books" onclick="closeMobile()">Books</a>
-      <a href="#programs" onclick="closeMobile()">Programs</a>
+      <a href="#think3d" onclick="closeMobile()">Think 3D</a>
+      <a href="#elevateyou" onclick="closeMobile()">Elevate You</a>
       <a href="#proof" onclick="closeMobile()">Proof</a>
       <a href="#contact" onclick="closeMobile()">Book Tamien →</a>
     </div>
@@ -1495,17 +1343,17 @@
     <div class="hero-content">
       <!-- LEFT: Text -->
       <div class="hero-text">
-        <p class="hero-eyebrow">Leadership Speaker &nbsp;·&nbsp; Culture Architect &nbsp;·&nbsp; Author</p>
+        <p class="hero-eyebrow">Leadership Speaker &nbsp;·&nbsp; Leadership Development Architect &nbsp;·&nbsp; Behavioral Installation Strategist</p>
         <h1 class="hero-headline">
-          Nothing of<br>Significance<br>Happens Without<br><em>Intention.</em>
+          Build Better<br>Leaders.<br><em>Install Better<br>Behavior.</em>
         </h1>
         <p class="hero-sub">
-          Tamien Dysart helps leaders build cultures people don't want to leave — and lives they're proud to live.
+          Tamien Dysart helps organizations grow from the inside out. Through Think 3D, he develops leaders through structured, accredited programs. Through Elevate You, he helps teams install the behaviors that a stronger culture depends on.
         </p>
-        <p class="hero-identity">CEO, Think 3D Solutions &nbsp;·&nbsp; Founder, Elevate You &nbsp;·&nbsp; Author of <em>Elevate</em></p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn--gold">Book Tamien to Speak</a>
-          <a href="#contact" class="btn btn--outline" onclick="setTimeout(()=>{document.getElementById('interest').value='conversation';updateRouting();},50)">Start a Conversation</a>
+          <a href="#think3d" class="btn btn--gold">Explore Think 3D</a>
+          <a href="#elevateyou" class="btn btn--outline">Explore Elevate You</a>
+          <a href="#contact" class="btn btn--outline-gold" onclick="setTimeout(()=>{document.getElementById('interest').value='speaking';updateRouting();},50)">Book Tamien to Speak</a>
         </div>
       </div>
       <!-- RIGHT: Portrait -->
@@ -1515,7 +1363,7 @@
           <span class="badge-lbl">Turnover<br>Capital One</span>
         </div>
         <div class="hero-portrait-frame">
-          <img src="assets/Tamien-Headshot-1024x683.jpg" alt="Tamien Dysart" />
+          <img src="assets/Chamber-Photos-3.jpg" alt="Tamien Dysart" />
         </div>
         <div class="hero-portrait-accent"></div>
       </div>
@@ -1566,51 +1414,93 @@
     </div>
   </div>
 
-  <!-- ─── PROBLEM ─── -->
-  <section id="problem" class="section">
+  <!-- ─── GATEWAY ─── -->
+  <section id="gateway" class="section section--dark2">
     <div class="container">
-      <div class="problem-trigger">
-        <blockquote>
-          <em>"How many of you are currently leading a life that your kids would want to live?"</em>
-        </blockquote>
-        <p class="result">Less than 5% raise their hand. Every time.</p>
-      </div>
-
-      <div class="problem-grid">
-        <div class="problem-card">
-          <p class="label">For the Leader</p>
-          <ul class="pain-list">
-            <li>I feel like I'm surviving, not leading.</li>
-            <li>My best people keep leaving.</li>
-            <li>We have mission, but we don't have momentum.</li>
-            <li>I'm leading others — but I've lost myself.</li>
-          </ul>
-        </div>
-        <div class="problem-card">
-          <p class="label">For the Organization</p>
-          <ul class="pain-list">
-            <li>We invest in training but nothing sticks.</li>
-            <li>High turnover is bleeding us dry.</li>
-            <li>Culture happened by accident — not design.</li>
-            <li>Engagement scores are a warning sign.</li>
-          </ul>
-        </div>
-        <div class="problem-card">
-          <p class="label">For the Individual</p>
-          <ul class="pain-list">
-            <li>I know I'm capable of more — but I'm stuck.</li>
-            <li>I'm living someone else's version of success.</li>
-            <li>I'm performing but not fulfilling.</li>
-            <li>I've confused the default with a decision.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="problem-closer">
+      <div style="text-align:center; max-width:720px; margin:0 auto 64px;">
+        <span class="tag">The Ecosystem</span>
+        <h2>One Voice.<br><span class="gold">Two Proven Paths.</span></h2>
         <div class="divider divider--center"></div>
-        <p>
-          The problem isn't effort. It's that 95% of your actions are driven by emotional state — and nobody ever showed you how to design the state on purpose. Change isn't a willpower problem. It's a wiring problem.
-        </p>
+        <p>Tamien's work helps organizations solve two connected challenges: how to develop stronger leaders and how to install the behaviors culture depends on.</p>
+      </div>
+      <div class="gateway-grid">
+        <div class="gateway-card gateway-card--think3d">
+          <span class="tag">Leadership Development</span>
+          <h3>Think 3D</h3>
+          <p>Build your leadership pipeline through structured, accredited development programs like Leaders of Tomorrow.</p>
+          <a href="#think3d" class="btn btn--gold">Explore Think 3D →</a>
+        </div>
+        <div class="gateway-card gateway-card--elevateyou">
+          <span class="tag" style="color:var(--blue);border-color:var(--blue);">Behavioral Installation</span>
+          <h3>Elevate You</h3>
+          <p>Transform team behavior through a proven installation system that makes culture stick.</p>
+          <a href="#elevateyou" class="btn btn--blue">Explore Elevate You →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── THINK 3D ─── -->
+  <section id="think3d" class="section section--dark">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <img src="assets/Go-Red-3.jpg" alt="Tamien Dysart speaking at leadership event" />
+          <div class="about-photo-accent"></div>
+          <div class="about-stat-pill">
+            <span class="number">1,000+</span>
+            <span class="label">Leaders<br>Developed</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="tag">Leadership Development</span>
+          <h2>Think 3D Develops<br>the Leaders Your<br><span class="gold">Culture Depends On.</span></h2>
+          <div class="divider"></div>
+          <p>Think 3D is for organizations that want to strengthen their bench, invest in emerging leaders, and create an intentional leadership pipeline. At the center is Leaders of Tomorrow — an accredited, structured, and proven leadership development program with more than 1,000 graduates.</p>
+          <div class="think3d-callout">
+            <p><strong>We move beyond informal growth with a philosophy built for results:</strong><br>Mindset → Skillset → Culture Set</p>
+          </div>
+          <ul class="think3d-list">
+            <li>Build a stronger leadership pipeline.</li>
+            <li>Develop emerging leaders through a structured, accredited program.</li>
+            <li>Improve continuity in leadership standards across the organization.</li>
+          </ul>
+          <a href="https://www.letsthink3d.com" target="_blank" rel="noopener" class="btn btn--gold" style="margin-top:32px;">Explore Think 3D Programs →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ELEVATE YOU ─── -->
+  <section id="elevateyou" class="section section--dark2">
+    <div class="container">
+      <div class="about-grid" style="grid-template-columns: 1.15fr 1fr;">
+        <div class="about-content">
+          <span class="tag" style="color:var(--blue);border-color:var(--blue);">Behavioral Installation</span>
+          <h2>Elevate You Installs<br>the Behaviors Your<br><span class="gold">Culture Requires.</span></h2>
+          <div class="divider"></div>
+          <p>Elevate You is an organizational behavioral installation system built on one premise: When you elevate the individual, you amplify the whole. We move beyond "inspiration" and into installed behavior — creating shared language and repeated practice until the right behaviors become your organization's default.</p>
+          <div class="elevateyou-anchors">
+            <span>Clarity over Noise</span>
+            <span>Ownership over Blame</span>
+            <span>Courage over Comfort</span>
+            <span>Collective over Self</span>
+            <span>Energy over Exhaustion</span>
+          </div>
+          <ul class="think3d-list">
+            <li>Install behavioral consistency across teams.</li>
+            <li>Strengthen accountability and self-correcting team dynamics.</li>
+            <li>Build a culture that holds without constant leader enforcement.</li>
+          </ul>
+          <div class="elevateyou-process">
+            <strong>The Process:</strong> Start with the Ripple Diagnostic™ and a 6-Week Pilot.
+          </div>
+          <a href="https://www.goelevateyou.com" target="_blank" rel="noopener" class="btn btn--blue" style="margin-top:32px;">Explore Behavioral Installation →</a>
+        </div>
+        <div class="about-photo-wrap">
+          <img src="assets/IMG_1494.jpeg" alt="Tamien Dysart on stage at Amplify" />
+          <div class="about-photo-accent" style="border-color:var(--blue);"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1620,7 +1510,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-photo-wrap">
-          <img src="assets/tamien-speaking-think-3d-1024x1024.jpg" alt="Tamien Dysart leading a workshop" />
+          <img src="assets/Chamber-Photos.jpg" alt="Tamien Dysart" />
           <div class="about-photo-accent"></div>
           <div class="about-stat-pill">
             <span class="number">33→6%</span>
@@ -1629,23 +1519,15 @@
         </div>
         <div class="about-content">
           <span class="tag">About Tamien</span>
-          <h2>I Didn't Learn<br>Leadership.<br><span class="gold">I Decided It.</span></h2>
+          <h2>The Bridge Between<br>Leadership &amp;<br><span class="gold">Culture Transformation.</span></h2>
           <div class="divider"></div>
           <p>
-            Fifteen years in corporate America taught me one thing clearly: most leaders are winging it. Including me, for a while.
+            Tamien Dysart brings more than 15 years of leadership experience inside Fortune 500 environments and the last decade as an entrepreneur helping organizations intentionally elevate culture. He has worked with high-growth Inc. 5000 companies focused on sustainability, as well as established organizations with good cultures that were ready to move from good to great.
           </p>
           <p>
-            Then a $7.99 John Maxwell book at Sam's Club changed everything.
+            Over the last ten years, Tamien has helped organizations strengthen leadership pipelines, improve team dynamics, and raise employee engagement into the 80–90%+ range by focusing on what drives culture at the root: intentional leadership.
           </p>
-          <p>
-            I went from watching what not to do on a credit card collections floor to becoming a site director at Capital One — where we reduced employee turnover from 33% to 6% in 18 months. Not by adding a perk. By changing what people came home feeling like.
-          </p>
-          <p>
-            That result didn't come from a program. It came from a decision to invest in culture with the same seriousness that organizations invest in strategy.
-          </p>
-          <p>
-            I've spent the years since turning that insight into a system — for leaders, for organizations, and for the next generation trying to build something real before the rocking chair. Nothing scares me more than unintentional living. So I don't do it. And I help others stop, too.
-          </p>
+          <p class="gold" style="font-style:italic; font-size:1.05rem;">"When you elevate the individual, you amplify the whole."</p>
           <div class="about-creds">
             <span class="cred-pill">Author · Think 3D &amp; Elevate</span>
             <span class="cred-pill">CEO, Think 3D Solutions</span>
@@ -1664,10 +1546,10 @@
       <div class="speaking-hero">
         <div>
           <span class="tag">Keynotes &amp; Workshops</span>
-          <h2>An Experience.<br>Not Just<br><span class="gold">a Talk.</span></h2>
+          <h2>Activate<br><span class="gold">the Room.</span></h2>
           <div class="divider"></div>
           <p>
-            Tamien has one objective when he takes a stage: every person in the room leaves with something they can use before they get home. High energy, structured brilliance, science and soul in the same breath.
+            Tamien's keynotes and workshops are designed to create clarity, urgency, and a practical next step. He connects neuroscience, leadership, and lived experience to move teams from autopilot to intentional action.
           </p>
           <div class="formats-strip">
             <span class="format-tag">Keynotes</span>
@@ -1679,7 +1561,7 @@
             <span class="format-tag">Podcast Appearances</span>
           </div>
         </div>
-        <img src="assets/think-3d-podcast-e1646854533412-850x425.jpg" alt="Tamien Dysart on the Think 3D podcast" />
+        <img src="assets/CC2.jpeg" alt="Tamien Dysart speaking on stage" />
       </div>
 
       <div class="keynotes-grid">
@@ -1722,76 +1604,8 @@
       </div>
 
       <div class="speaking-book-cta">
-        <a href="#contact" class="btn btn--gold" onclick="setTimeout(()=>{document.getElementById('interest').value='speaking';updateRouting();},50)">Book Tamien to Speak</a>
-        <a href="#contact" class="btn btn--outline-gold" onclick="setTimeout(()=>{document.getElementById('interest').value='podcast';updateRouting();},50)">Invite Tamien to Your Podcast</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── FRAMEWORK ─── -->
-  <section id="framework" class="section section--dark">
-    <div class="container">
-      <div class="framework-intro">
-        <div>
-          <span class="tag">The System</span>
-          <h2>A System.<br>Not a<br><span class="gold">Speech.</span></h2>
-          <div class="divider"></div>
-          <p>
-            The Integrated Ripple Effect Ecosystem is built to work at every level simultaneously — individual, organization, and community. Because you can't build a culture that outperforms the identity of its leaders.
-          </p>
-          <p>
-            Every engagement starts with the same question: where are you on the arc? From there, the work is structured, sequenced, and built to compound.
-          </p>
-          <p class="gold" style="font-style:italic; margin-top:12px;">"From self-awareness to amplified impact."</p>
-        </div>
-        <div>
-          <div class="ecosystem-visual">
-            <span class="tag" style="border-color: rgba(255,255,255,0.2); color: var(--muted);">The Integrated Ripple Effect</span>
-            <div class="ecosystem-hub">Tamien Dysart</div>
-            <div class="connector-line"></div>
-            <div class="ecosystem-spokes">
-              <div class="spoke">
-                <div class="spoke-label">Elevate You</div>
-                <div class="spoke-mantra">Elevate Self</div>
-              </div>
-              <div class="spoke">
-                <div class="spoke-label">Think 3D</div>
-                <div class="spoke-mantra">Evolve Culture</div>
-              </div>
-              <div class="spoke">
-                <div class="spoke-label">Young Kings</div>
-                <div class="spoke-mantra">Extend Opportunity</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="frameworks-grid">
-        <div class="framework-card">
-          <h4>The 4 A's Framework</h4>
-          <p>Awareness → Alignment → Activation → Amplification. Every engagement starts here. The arc that moves individuals and teams from knowing to doing to becoming.</p>
-        </div>
-        <div class="framework-card">
-          <h4>Mindset → Skillset → Culture Set</h4>
-          <p>You can't train your way out of a mindset problem. Tamien works at all three levels because lasting transformation requires all three layers to shift together.</p>
-        </div>
-        <div class="framework-card">
-          <h4>E.L.I.T.E. Mindset</h4>
-          <p>Everything Leads Incrementally Toward Excellence. Progress, not perfection. Compounding, not shortcuts. The math of the long game laid out in five words.</p>
-        </div>
-        <div class="framework-card">
-          <h4>The SUCCEED Framework</h4>
-          <p>Sacrifice · Uncommon · Connections · Courageous Commitment · Enthusiasm · Expectations · Discipline. Seven anchors for leaders building something that lasts.</p>
-        </div>
-        <div class="framework-card">
-          <h4>Symphony of Life</h4>
-          <p>Every person in the room plays a different instrument. The question isn't whether a culture will emerge — it's whether anyone is conducting it with intention.</p>
-        </div>
-        <div class="framework-card">
-          <h4>The Two Fires</h4>
-          <p>"Whichever fire you choose to place your log on is going to burn the brightest." Where you invest your energy is not a neutral decision. It never was.</p>
-        </div>
+        <a href="#contact" class="btn btn--gold" onclick="setTimeout(()=>{document.getElementById('interest').value='speaking';updateRouting();},50)">Book Tamien for Your Event →</a>
+        <a href="#contact" class="btn btn--outline-gold" style="margin-left:16px;" onclick="setTimeout(()=>{document.getElementById('interest').value='podcast';updateRouting();},50)">Invite Tamien to Your Podcast</a>
       </div>
     </div>
   </section>
@@ -1856,74 +1670,6 @@
     </div>
   </section>
 
-  <!-- ─── PROGRAMS ─── -->
-  <section id="programs" class="section section--dark">
-    <div class="container">
-      <div class="programs-header">
-        <span class="tag">Programs &amp; Services</span>
-        <h2>Built for<br><span class="gold">Where You Are.</span></h2>
-        <div class="divider divider--center"></div>
-        <p>Whether you're building a high-performance culture inside an organization, or redesigning your own life from the inside out — there is a path built for you.</p>
-      </div>
-
-      <div class="programs-grid">
-        <!-- THINK 3D -->
-        <div class="program-card program-card--think3d">
-          <div class="program-card-top">
-            <div class="program-icon">🏗</div>
-            <p class="program-audience program-audience--think3d">For Organizations &amp; Leaders</p>
-            <h3>Think 3D Solutions</h3>
-            <p class="program-tagline program-tagline--think3d">Evolve Your Culture</p>
-          </div>
-          <div class="program-distinction program-distinction--think3d">
-            Think 3D is for <strong style="color:var(--white)">organizations</strong> — teams, companies, and institutions ready to stop paying for a culture they never intentionally built.
-          </div>
-          <div class="program-card-body">
-            <p>
-              Culture consulting, leadership development, and training for organizations ready to make culture a measurable asset — not an afterthought. Built around one truth: what leaders invest in intentionally, sticks.
-            </p>
-            <ul class="program-list">
-              <li>Think 3D University — leadership development curriculum</li>
-              <li>Leaders of Tomorrow (LOT) Program</li>
-              <li>Power of Culture Workshop</li>
-              <li>Symphony of Life Facilitation</li>
-              <li>SUCCEED — Executive Leadership Framework</li>
-              <li>Culture Consulting Engagements</li>
-            </ul>
-            <a href="#contact" class="btn btn--gold" onclick="document.getElementById('interest').value='think3d';updateRouting()">Explore Leadership &amp; Culture Programs →</a>
-          </div>
-        </div>
-
-        <!-- ELEVATE YOU -->
-        <div class="program-card program-card--elevate">
-          <div class="program-card-top">
-            <div class="program-icon">⬆️</div>
-            <p class="program-audience program-audience--elevate">For Individuals &amp; Emerging Leaders</p>
-            <h3>Elevate You</h3>
-            <p class="program-tagline program-tagline--elevate">Elevate Your Self-Leadership</p>
-          </div>
-          <div class="program-distinction program-distinction--elevate">
-            Elevate You is for <strong style="color:var(--white)">individuals</strong> — high-achievers and emerging leaders who are done living on autopilot and ready to design their life with intention.
-          </div>
-          <div class="program-card-body">
-            <p>
-              The self-leadership platform, book, and retreat series for high-achievers living someone else's version of success. Rooted in neuroscience. Built for people who are ready to move from surviving to designing.
-            </p>
-            <ul class="program-list">
-              <li>Power of M.E. Retreat</li>
-              <li>E.L.I.T.E. Mindset Retreat</li>
-              <li>Self-Leadership Workshop Series</li>
-              <li>Intentional Living Online Curriculum</li>
-              <li>Book: <em>Elevate</em> (2023)</li>
-              <li>Elevate You App (Coming Soon)</li>
-            </ul>
-            <a href="#contact" class="btn btn--gold" onclick="document.getElementById('interest').value='elevateyou';updateRouting()">Bring Tamien to Your Organization →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ─── PROOF ─── -->
   <section id="proof" class="section section--dark2">
     <div class="container">
@@ -1945,8 +1691,8 @@
           <span class="stat-label">Speaking Events Delivered Across Industries &amp; Stages</span>
         </div>
         <div class="stat-block">
-          <span class="stat-number">500+</span>
-          <span class="stat-label">Seminars, Workshops &amp; Talks Given Over 15+ Years</span>
+          <span class="stat-number">80–90%+</span>
+          <span class="stat-label">Employee Engagement for Coached Clients</span>
         </div>
       </div>
       <div class="stats-bar stats-bar--row2">
@@ -1963,8 +1709,8 @@
           <span class="stat-label">Books Read Per Year — Practices What He Teaches</span>
         </div>
         <div class="stat-block">
-          <span class="stat-number">3</span>
-          <span class="stat-label">Active Ecosystems — Individual, Organization &amp; Community</span>
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Years Elevating Culture &amp; Organizational Behavior</span>
         </div>
       </div>
 
@@ -2071,6 +1817,23 @@
     </div>
   </section>
 
+  <!-- ─── FINAL CTA ─── -->
+  <section id="final-cta" class="section">
+    <div class="container">
+      <div class="final-cta-inner">
+        <h2>Let's Build Something<br><span class="gold">Intentional.</span></h2>
+        <div class="divider divider--center"></div>
+        <p>Whether you are developing the leaders of tomorrow or installing the behaviors of today, let's start the conversation.</p>
+        <div class="final-cta-buttons">
+          <a href="#contact" class="btn btn--gold" onclick="setTimeout(()=>{document.getElementById('interest').value='speaking';updateRouting();},50)">Book Tamien to Speak</a>
+          <a href="https://letsthink3d.com/contact-us/" target="_blank" rel="noopener" class="btn btn--outline">Contact Think 3D</a>
+          <a href="https://goelevateyou.com/contact-us" target="_blank" rel="noopener" class="btn btn--blue">Contact Elevate You</a>
+        </div>
+        <p class="final-cta-mantra">From self-awareness to amplified impact.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── CONTACT ─── -->
   <section id="contact" class="section section--dark">
     <div class="container">
@@ -2160,10 +1923,13 @@
             <li><a href="#about">About</a></li>
             <li><a href="#speaking">Speaking</a></li>
             <li><a href="#books">Books</a></li>
-            <li><a href="#programs">Think 3D</a></li>
-            <li><a href="#programs">Elevate You</a></li>
             <li><a href="#proof">Proof</a></li>
             <li><a href="#contact">Book Tamien</a></li>
+          </ul>
+          <h5 style="margin-top:24px;">Programs</h5>
+          <ul class="footer-links">
+            <li><a href="https://www.letsthink3d.com" target="_blank" rel="noopener">Think 3D ↗</a></li>
+            <li><a href="https://www.goelevateyou.com" target="_blank" rel="noopener">Elevate You ↗</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -2255,7 +2021,7 @@
 
     // Scroll-reveal (lightweight, no library)
     const revealEls = document.querySelectorAll(
-      '.problem-card, .keynote-card, .framework-card, .book-card, .program-card, .stat-block, .testimonial-card, .about-grid, .speaking-hero'
+      '.gateway-card, .keynote-card, .book-card, .stat-block, .testimonial-card, .about-grid, .speaking-hero, .think3d-callout, .elevateyou-anchors'
     );
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
