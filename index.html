@@ -536,6 +536,9 @@
       background: linear-gradient(to bottom, var(--muted), transparent);
       animation: scrollDrop 1.5s ease-in-out infinite;
     }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
     @keyframes scrollDrop {
       0%,100% { transform: scaleY(1); opacity: 1; }
       50% { transform: scaleY(0.6); opacity: 0.4; }
@@ -2018,7 +2021,39 @@
         </div>
 
         <div class="contact-form" style="padding:0;background:transparent;box-shadow:none;">
-          <div data-fillout-id="hrrQ4zsW3wus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize style="width:100%;"></div>
+          <!-- Immediate CTA — visible before Fillout loads -->
+          <div id="form-quick-cta" style="
+            background:#122236;
+            border:1px solid rgba(201,147,47,0.25);
+            border-left:4px solid var(--gold);
+            border-radius:var(--radius);
+            padding:28px 32px;
+            margin-bottom:20px;
+          ">
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">Ready to connect?</p>
+            <p style="font-size:1.05rem;color:var(--white);margin-bottom:20px;line-height:1.5;">Send Tamien a direct message — he personally responds to every inquiry.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="https://forms.fillout.com/t/hrrQ4zsW3wus" target="_blank" rel="noopener" class="btn btn--gold">Send an Inquiry →</a>
+              <a href="mailto:tamien@letsthink3d.com" class="btn btn--outline-gold">Email Directly</a>
+            </div>
+          </div>
+          <!-- Fillout embed — loads async below the fold CTA -->
+          <div id="fillout-placeholder" style="
+            min-height:480px;
+            background:#0f1e2e;
+            border-radius:var(--radius);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+            gap:12px;
+          ">
+            <div style="width:32px;height:32px;border:3px solid rgba(201,147,47,0.2);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+            <p style="font-size:0.8rem;color:var(--muted);margin:0;">Loading contact form…</p>
+          </div>
+          <div id="fillout-embed" style="display:none;width:100%;">
+            <div data-fillout-id="hrrQ4zsW3wus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize style="width:100%;"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -2144,6 +2179,22 @@
       observer.observe(el);
     });
   </script>
-  <script src="https://server.fillout.com/embed/v1/"></script>
+  <script>
+    // Show Fillout embed once script loads, hide placeholder
+    (function() {
+      var script = document.createElement('script');
+      script.src = 'https://server.fillout.com/embed/v1/';
+      script.async = true;
+      script.onload = function() {
+        setTimeout(function() {
+          var placeholder = document.getElementById('fillout-placeholder');
+          var embed = document.getElementById('fillout-embed');
+          if (placeholder) placeholder.style.display = 'none';
+          if (embed) embed.style.display = 'block';
+        }, 800);
+      };
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
