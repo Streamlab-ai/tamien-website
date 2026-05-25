@@ -675,6 +675,7 @@
       margin-top: 16px;
     }
     .elevateyou-process strong { color: var(--white); }
+    .elevate-grid { grid-template-columns: 1.15fr 1fr; }
 
     /* ─── FINAL CTA ─── */
     #final-cta { background: var(--navy3); }
@@ -1438,9 +1439,9 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 960px) {
       .about-grid,
+      .elevate-grid,
       .speaking-hero,
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-      .about-grid[style*="1.15fr"] { grid-template-columns: 1fr; }
       .about-stat-pill { right: 16px; }
       .gateway-grid { grid-template-columns: 1fr; }
       .books-grid { grid-template-columns: 1fr; }
@@ -1648,7 +1649,7 @@
   <!-- ─── ELEVATE YOU ─── -->
   <section id="elevateyou" class="section section--dark2">
     <div class="container">
-      <div class="about-grid" style="grid-template-columns: 1.15fr 1fr;">
+      <div class="about-grid elevate-grid">
         <div class="about-content">
           <span class="tag" style="color:var(--blue);border-color:var(--blue);">Behavioral Installation</span>
           <h2>Elevate You Installs<br>the Behaviors Your<br><span class="gold">Culture Requires.</span></h2>
