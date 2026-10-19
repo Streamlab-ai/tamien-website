@@ -95,9 +95,22 @@
 
   /* Step-through progress */
   .stepper { position: sticky; top: 0; z-index: 5; background: var(--cream); padding: 10px 0 8px; margin-top: 6px; }
-  .stepper-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 14px; margin-bottom: 6px; }
+  .stepper-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px; margin-bottom: 6px; }
   .stepper-top b { font-weight: 700; }
-  .stepper-top span:last-child { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .step-time { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .step-cta { display: inline-block; white-space: nowrap; font: inherit; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 0; background: var(--gold); color: var(--navy); cursor: pointer; text-decoration: none; }
+
+  /* Last step: save results */
+  .save-card { background: var(--navy); color: #fff; border-radius: 16px; padding: 26px 22px; margin: 18px 0; }
+  .save-card h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 30px); margin: 2px 0 6px; }
+  .save-card .eyebrow { margin: 0; }
+  .save-sub { color: #d7d6e0; margin: 0 0 12px; max-width: 620px; }
+  .save-card label.f span { color: #c9c9d6; }
+  .save-card .consent { color: #b9b9c8; }
+  .save-card .msg.ok { color: #7fd6a0; } .save-card .msg.err { color: #ff9a9a; }
+  .alt-link { margin: 12px 0 0; }
+  .linklike { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; color: #d7d6e0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+  #readingCard, #emailCard, .results { scroll-margin-top: 70px; }
   .segs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
   .seg { height: 8px; border: 0; padding: 0; border-radius: 4px; background: #E6E2D8; cursor: pointer; }
   .seg.done { background: var(--gold); }
@@ -161,7 +174,6 @@
   .ssp textarea { min-height: 110px; resize: vertical; }
 
   /* Actions */
-  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-weight: 600; font-size: 15px; padding: 13px 20px; border-radius: 10px; border: 2px solid var(--navy); background: var(--navy); color: #fff; cursor: pointer; text-decoration: none; }
   .btn:hover { background: #2a2c45; }
   .btn.ghost { background: #fff; color: var(--navy); }
@@ -183,11 +195,11 @@
   @media (max-width: 760px) {
     .results { grid-template-columns: 1fr; }
     .zones, .levels { grid-template-columns: 1fr 1fr; }
-    .reading, .ssp, .actions { grid-template-columns: 1fr; }
+    .reading, .ssp { grid-template-columns: 1fr; }
     .who { grid-template-columns: 1fr; }
     .ssp label em { min-height: 0; }
   }
-  @media (max-width: 420px) { .row2 { grid-template-columns: 1fr; } .fdn-avg span { display: none; } .stepper-top span:last-child { display: none; } }
+  @media (max-width: 420px) { .row2 { grid-template-columns: 1fr; } .fdn-avg span { display: none; } .step-time { display: none; } }
 
   @media print {
     @page { margin: 12mm; }
@@ -274,7 +286,7 @@
   </section>
 
   <div class="stepper no-print" id="stepper">
-    <div class="stepper-top"><span id="stepLabel"><b>Foundation 1 of 5</b> · Mindset &amp; Mental Diet</span><span>About 10 min total</span></div>
+    <div class="stepper-top"><span id="stepLabel"><b>Foundation 1 of 5</b> · Mindset &amp; Mental Diet</span><span id="stepAside"><span class="step-time">About 10 min total</span></span></div>
     <div class="segs" id="segs"></div>
   </div>
 
@@ -297,25 +309,34 @@
       <label><span>Start</span><em>One small habit (5 minutes or less) to begin this week.</em><textarea id="start" placeholder="Write here…"></textarea></label>
       <label><span>Protect</span><em>One strength you will safeguard at all costs.</em><textarea id="protect" placeholder="Write here…"></textarea></label>
     </div>
+    <div class="fdn-next no-print">
+      <button class="btn" id="toSaveBtn" type="button">Last step: save my results &rarr;</button>
+    </div>
   </section>
 
-  <section class="actions no-print">
-    <div class="card" style="margin:0">
-      <h2 class="section-title">Keep your results</h2>
-      <p class="small">Print or save as PDF now, or get a copy sent to your inbox.</p>
-      <button class="btn ghost" id="printBtn" type="button">Print my assessment</button>
-    </div>
-    <form class="card" style="margin:0" id="emailForm" novalidate>
-      <h2 class="section-title">Email my results</h2>
+  <section class="save-card no-print" id="emailCard">
+    <form id="emailForm" novalidate>
+      <p class="eyebrow" style="color:var(--gold)">Last step</p>
+      <h2>Get your results</h2>
+      <p class="save-sub">We'll email you your scores, your biggest opportunity, and your Stop · Start · Protect so you can keep them.</p>
       <div class="row2">
         <label class="f"><span>First name</span><input type="text" id="firstname" autocomplete="given-name" required></label>
         <label class="f"><span>Last name</span><input type="text" id="lastname" autocomplete="family-name" required></label>
       </div>
       <label class="f"><span>Email</span><input type="email" id="email" autocomplete="email" required></label>
       <p class="consent">We'll email your results and occasional follow-up from Elevate You. Unsubscribe anytime.</p>
-      <button class="btn" id="sendBtn" type="submit">Send my results</button>
+      <button class="btn gold" id="sendBtn" type="submit">Send me my results</button>
       <div class="msg" id="sendMsg" role="status"></div>
+      <p class="alt-link"><button class="linklike" id="printBtn" type="button">or print instead</button></p>
     </form>
+    <div id="sentState" hidden>
+      <p class="eyebrow" style="color:var(--gold)">Sent &#10003;</p>
+      <h2>Check your inbox</h2>
+      <p class="save-sub">Your results are on their way. They should arrive in a few minutes.</p>
+      <p class="save-sub"><b>Your next step:</b> talk through your results with Tamien and how to close your biggest gaps.</p>
+      <a class="btn gold" id="sentBookBtn" href="#" target="_blank" rel="noopener">Book a discovery call</a>
+      <p class="alt-link"><button class="linklike" id="printBtn2" type="button">Print a copy</button></p>
+    </div>
   </section>
 
   <section class="cta">
@@ -351,6 +372,12 @@ const ZONES = [
 const LEVEL_LABELS = ['1–3 · Depleting', '4–6 · Maintenance', '7–8 · Intentional', '9–10 · Elite'];
 const LEVEL_COLORS = ['var(--red)', 'var(--orange)', 'var(--green)', 'var(--elite)'];
 const scores = {};   // item id -> 1..10
+let sent = false;            // results emailed in this visit
+let restoredView = false;    // opened from a saved results link
+let completedTracked = false;
+
+function track(name) { if (window.gtag) gtag('event', name); }
+function goTo(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 
 function zoneFor(v) {   // integer scores and averages share the PDF bands
   if (v < 4) return ZONES[0];
@@ -391,9 +418,21 @@ function openFdn(n, scroll) {
 function updateStepper() {
   const openSec = document.querySelector('.fdn.open');
   const focus = openSec ? +openSec.id.slice(3) : currentStep();
-  const label = document.getElementById('stepLabel');
-  if (doneCount() === 5 && !openSec) label.innerHTML = '<b>All 5 foundations complete ✓</b> · Tap any step to review';
-  else label.innerHTML = `<b>Foundation ${focus} of 5</b> · ${esc(FOUNDATIONS[focus - 1].name)}`;
+  const label = document.getElementById('stepLabel'), aside = document.getElementById('stepAside');
+  const bookLink = `<a class="step-cta" href="${esc(CONFIG.meetingUrl)}" target="_blank" rel="noopener">Book a call</a>`;
+  if (sent) {
+    label.innerHTML = '<b>Results sent ✓</b> · Check your inbox';
+    aside.innerHTML = bookLink;
+  } else if (doneCount() === 5 && restoredView) {
+    label.innerHTML = '<b>Your saved results</b>';
+    aside.innerHTML = bookLink;
+  } else if (doneCount() === 5) {
+    label.innerHTML = '<b>Last step:</b> send yourself your results';
+    aside.innerHTML = '<button class="step-cta" type="button" data-go="emailCard">Send my results &darr;</button>';
+  } else {
+    label.innerHTML = `<b>Foundation ${focus} of 5</b> · ${esc(FOUNDATIONS[focus - 1].name)}`;
+    aside.innerHTML = '<span class="step-time">About 10 min total</span>';
+  }
   document.querySelectorAll('.seg').forEach(s => {
     const n = +s.dataset.n;
     s.classList.toggle('done', ratedIn(n) === 6);
@@ -416,7 +455,7 @@ function build() {
         <p class="fdn-intro">${esc(f.intro)}</p>
         ${ITEMS.filter(i => i.f === f.n).map(itemHtml).join('')}
         <div class="fdn-next no-print">
-          <button class="btn next-btn" type="button" data-n="${f.n}" disabled>${f.n < 5 ? `Next: ${esc(FOUNDATIONS[f.n].name)} &rarr;` : 'See my results &rarr;'}</button>
+          <button class="btn next-btn" type="button" data-n="${f.n}" disabled>${f.n < 5 ? `Next: ${esc(FOUNDATIONS[f.n].name)} &rarr;` : 'Next: Your results &rarr;'}</button>
           <p class="small" id="hint${f.n}">Rate all 6 areas to continue.</p>
         </div>
       </div>
@@ -430,7 +469,7 @@ function build() {
     const n = +b.dataset.n;
     if (n < 5) { openFdn(n + 1, true); return; }
     openFdn(null, false);
-    document.querySelector('.results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    goTo('readingCard');
   }));
   document.getElementById('segs').innerHTML = FOUNDATIONS.map(f =>
     `<button class="seg" type="button" data-n="${f.n}" aria-label="Go to foundation ${f.n}: ${esc(f.name)}"></button>`).join('');
@@ -531,6 +570,7 @@ function refresh() {
   oz.style.color = overall == null ? '#b9b9c8' : zoneFor(overall).color;
   const done = doneCount();
   document.getElementById('progress').textContent = done === 5 ? 'All 5 foundations complete' : `${done} of 5 foundations complete`;
+  if (done === 5 && !completedTracked && !restoredView) { completedTracked = true; track('assessment_completed'); }
 
   FOUNDATIONS.forEach(f => {
     const n = ratedIn(f.n), complete = n === 6;
@@ -603,9 +643,13 @@ document.getElementById('emailForm').addEventListener('submit', async e => {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
     });
     if (!r.ok) throw new Error(r.status);
-    msg.className = 'msg ok';
-    msg.textContent = 'Sent. Check your inbox in a few minutes.';
-    if (window.gtag) gtag('event', 'assessment_results_emailed');
+    sent = true;
+    track('assessment_results_emailed');
+    document.getElementById('emailForm').hidden = true;
+    document.getElementById('sentState').hidden = false;
+    document.querySelector('.cta').hidden = true;   // the sent card already offers the call
+    updateStepper();
+    goTo('emailCard');
   } catch (err) {
     msg.className = 'msg err';
     msg.textContent = 'Something went wrong. Please try again, or use Print to save your results.';
@@ -613,11 +657,22 @@ document.getElementById('emailForm').addEventListener('submit', async e => {
   }
 });
 
-document.getElementById('printBtn').addEventListener('click', () => window.print());
+['printBtn', 'printBtn2'].forEach(id => document.getElementById(id).addEventListener('click', () => window.print()));
+document.getElementById('toSaveBtn').addEventListener('click', () => {
+  goTo('emailCard');
+  setTimeout(() => document.getElementById('firstname').focus({ preventScroll: true }), 600);
+});
+document.getElementById('stepAside').addEventListener('click', e => {
+  const go = e.target.closest('[data-go]');
+  if (go) goTo(go.dataset.go);
+  if (e.target.closest('a.step-cta')) track('assessment_book_call_click');
+});
 
-const book = document.getElementById('bookBtn');
-if (CONFIG.meetingUrl) book.href = CONFIG.meetingUrl; else book.addEventListener('click', e => { e.preventDefault(); alert('Preview mode: the booking link is not connected yet.'); });
-book.addEventListener('click', () => { if (window.gtag) gtag('event', 'assessment_book_call_click'); });
+['bookBtn', 'sentBookBtn'].forEach(id => {
+  const book = document.getElementById(id);
+  if (CONFIG.meetingUrl) book.href = CONFIG.meetingUrl; else book.addEventListener('click', e => { e.preventDefault(); alert('Preview mode: the booking link is not connected yet.'); });
+  book.addEventListener('click', () => track('assessment_book_call_click'));
+});
 
 /* Prefill the email form from the full name */
 document.getElementById('fullname').addEventListener('change', e => {
@@ -630,6 +685,7 @@ document.getElementById('fullname').addEventListener('change', e => {
 document.getElementById('date').valueAsDate = new Date();
 build();
 const restored = loadFromHash();
+restoredView = restored;
 refresh();
 if (!restored) openFdn(currentStep() || 1, false);   // a saved results link opens with every foundation collapsed
 </script>
