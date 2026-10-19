@@ -327,7 +327,7 @@
       <p class="consent">We'll email your results and occasional follow-up from Elevate You. Unsubscribe anytime.</p>
       <button class="btn gold" id="sendBtn" type="submit">Send me my results</button>
       <div class="msg" id="sendMsg" role="status"></div>
-      <p class="alt-link"><button class="linklike" id="printBtn" type="button">or print instead</button></p>
+      <p class="alt-link" id="printFallback" hidden><button class="linklike" id="printBtnFallback" type="button">Print your results instead</button></p>
     </form>
     <div id="sentState" hidden>
       <p class="eyebrow" style="color:var(--gold)">Sent &#10003;</p>
@@ -335,7 +335,7 @@
       <p class="save-sub">Your results are on their way. They should arrive in a few minutes.</p>
       <p class="save-sub"><b>Your next step:</b> talk through your results with Tamien and how to close your biggest gaps.</p>
       <a class="btn gold" id="sentBookBtn" href="#" target="_blank" rel="noopener">Book a discovery call</a>
-      <p class="alt-link"><button class="linklike" id="printBtn2" type="button">Print a copy</button></p>
+      <p class="alt-link"><button class="linklike" id="printBtn" type="button">Print a copy</button></p>
     </div>
   </section>
 
@@ -652,12 +652,13 @@ document.getElementById('emailForm').addEventListener('submit', async e => {
     goTo('emailCard');
   } catch (err) {
     msg.className = 'msg err';
-    msg.textContent = 'Something went wrong. Please try again, or use Print to save your results.';
+    msg.textContent = 'Something went wrong. Please try again in a moment.';
+    document.getElementById('printFallback').hidden = false;   // only offered when sending fails
     btn.disabled = false;
   }
 });
 
-['printBtn', 'printBtn2'].forEach(id => document.getElementById(id).addEventListener('click', () => window.print()));
+['printBtn', 'printBtnFallback'].forEach(id => document.getElementById(id).addEventListener('click', () => { track('assessment_printed'); window.print(); }));
 document.getElementById('toSaveBtn').addEventListener('click', () => {
   goTo('emailCard');
   setTimeout(() => document.getElementById('firstname').focus({ preventScroll: true }), 600);
