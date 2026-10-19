@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>5-Foundation Baseline Assessment | Elevate You with Tamien Dysart</title>
+<meta name="description" content="An honest self-assessment across five foundations of life: mindset, body, relationships, environment, and spirit. Rate 30 areas, see your wheel, and find where to begin.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K7F4ZM71CY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K7F4ZM71CY');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B1C2E;
+    --navy-2: #24263B;
+    --gold: #C5A044;
+    --gold-soft: #E9DBB4;
+    --cream: #F5F3EE;
+    --card: #FFFFFF;
+    --ink: #1B1C2E;
+    --muted: #6B6E80;
+    --line: #E4E0D6;
+    --red: #D64545;
+    --orange: #DD8A26;
+    --green: #2E9E5B;
+    --elite: #B8902F;
+    --f1: #7B6CF6; --f2: #22B35E; --f3: #3B82F6; --f4: #F0A020; --f5: #E2498F;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--cream); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.55; }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  /* Header */
+  .hero { background: radial-gradient(ellipse at 50% 0%, #34324a 0%, var(--navy) 65%); color: #fff; text-align: center; padding: 18px 0 44px; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; font-size: 13px; letter-spacing: .04em; color: #c9c9d6; margin-bottom: 28px; }
+  .topbar a { text-decoration: none; }
+  .topbar a:hover { color: var(--gold); }
+  .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(34px, 7vw, 54px); letter-spacing: .02em; line-height: 1; margin: 0; }
+  .brand .g { color: var(--gold); }
+  .rule { width: 72px; height: 2px; background: var(--gold); margin: 14px auto; border: 0; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; color: var(--gold); font-size: clamp(20px, 3.6vw, 26px); margin: 0 0 18px; }
+  .quote { max-width: 640px; margin: 0 auto 16px; font-family: 'Playfair Display', serif; font-size: clamp(17px, 2.6vw, 20px); line-height: 1.5; color: #f3f1ea; }
+  .tag { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: #b9b9c8; margin: 0; }
+
+  /* Cards */
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin: 18px 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; margin: 0 0 6px; }
+  .small { font-size: 14px; color: var(--muted); }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+  .intro { margin-top: -26px; position: relative; }
+  .zones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; }
+  .zone { border-radius: 10px; padding: 10px; background: #F7F5F0; border-top: 4px solid; font-size: 13px; }
+  .zone b { display: block; font-size: 15px; }
+  .z1 { border-color: var(--red); } .z2 { border-color: var(--orange); } .z3 { border-color: var(--green); } .z4 { border-color: var(--elite); }
+  .rules { margin: 8px 0 0; padding-left: 20px; font-size: 14px; }
+  .rules li { margin: 4px 0; }
+  .guide-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 10px; font-weight: 600; font-size: 14px; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--gold); }
+
+  .who { display: grid; grid-template-columns: 1fr 180px; gap: 14px; }
+  label.f { display: block; }
+  label.f span { display: block; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  input[type=text], input[type=email], input[type=date], textarea {
+    width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
+  }
+  input:focus, textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+
+  /* Results panel */
+  .results { background: var(--navy); color: #fff; border-radius: 16px; display: grid; grid-template-columns: 1.3fr 1fr; overflow: hidden; margin: 18px 0; }
+  .wheel { padding: 18px; display: flex; align-items: center; justify-content: center; }
+  .wheel svg { width: 100%; max-width: 380px; height: auto; }
+  .side { background: var(--navy-2); padding: 22px; }
+  .overall { text-align: center; }
+  .ring { width: 116px; height: 116px; border-radius: 50%; border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 8px auto 6px; font-family: 'Playfair Display', serif; font-size: 38px; color: var(--gold); }
+  .zone-label { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  .progress { font-size: 13px; color: #c3c3d2; margin-top: 4px; }
+  .fscores { list-style: none; padding: 0; margin: 18px 0 0; }
+  .fscores li { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 14px; }
+  .fscores li i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+  .fscores b { font-variant-numeric: tabular-nums; }
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 12px; color: #c9c9d6; margin-top: 14px; }
+  .legend span::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--c); }
+
+  /* Foundations */
+  .fdn { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin: 14px 0; overflow: hidden; border-left: 5px solid var(--fc); }
+  .fdn-head { width: 100%; display: flex; align-items: center; gap: 12px; padding: 16px 18px; background: none; border: 0; cursor: pointer; text-align: left; font: inherit; color: inherit; }
+  .fdn-num { width: 34px; height: 34px; flex: none; border-radius: 9px; background: color-mix(in srgb, var(--fc) 14%, white); color: var(--fc); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  .fdn-title { flex: 1; }
+  .fdn-title strong { display: block; font-family: 'Playfair Display', serif; font-size: 19px; }
+  .fdn-title em { font-style: normal; font-size: 13px; color: var(--muted); }
+  .fdn-avg { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .fdn-avg b { color: var(--ink); font-size: 16px; }
+  .chev { transition: transform .2s; color: var(--muted); }
+  .fdn.open .chev { transform: rotate(180deg); }
+  .fdn-body { display: none; padding: 0 18px 10px; }
+  .fdn.open .fdn-body { display: block; }
+  .fdn-intro { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+
+  .item { padding: 14px 0; border-top: 1px solid var(--line); }
+  .item-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .item-name { font-weight: 600; font-size: 15px; }
+  .item-score { white-space: nowrap; text-align: right; }
+  .item-score b { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--zc, var(--muted)); }
+  .item-score small { display: block; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--zc, var(--muted)); }
+  .learn { background: none; border: 0; padding: 0; margin: 2px 0 0; font: inherit; font-size: 13px; font-weight: 600; color: var(--elite); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 28px; background: transparent; margin: 8px 0 0; cursor: pointer; }
+  input[type=range]::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: linear-gradient(to right, var(--gold) var(--p, 0%), #E6E2D8 var(--p, 0%)); }
+  input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; background: #E6E2D8; }
+  input[type=range]::-moz-range-progress { height: 6px; border-radius: 3px; background: var(--gold); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; margin-top: -9px; border-radius: 50%; background: var(--navy); border: 3px solid var(--gold); box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  input[type=range]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--navy); border: 3px solid var(--gold); }
+  .unrated input[type=range]::-webkit-slider-thumb { background: #fff; border-color: #C9C4B6; box-shadow: none; }
+  .unrated input[type=range]::-moz-range-thumb { background: #fff; border-color: #C9C4B6; }
+  .unrated input[type=range]::-moz-range-progress { background: transparent; }
+  .ticks { display: flex; justify-content: space-between; font-size: 11px; color: #A4A6B4; padding: 0 4px; }
+
+  .detail { display: none; margin-top: 12px; background: #FAF8F3; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 14px; }
+  .detail.show { display: block; }
+  .detail h4 { margin: 12px 0 4px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--elite); }
+  .detail h4:first-child { margin-top: 0; }
+  .detail p { margin: 0; }
+  .detail ul { margin: 0; padding-left: 18px; }
+  .levels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 4px; }
+  .lv { background: #fff; border-radius: 8px; padding: 8px; border-top: 3px solid; font-size: 13px; }
+  .lv b { display: block; font-size: 12px; margin-bottom: 2px; }
+  .blind { margin-top: 12px; border-left: 3px solid var(--fc); padding: 6px 10px; background: #fff; border-radius: 0 8px 8px 0; }
+
+  /* Reading + SSP */
+  .reading { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
+  .reading div { background: #F7F5F0; border-radius: 10px; padding: 12px; font-size: 14px; }
+  .reading b { display: block; font-size: 15px; margin-bottom: 2px; }
+  .ssp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
+  .ssp label span { font-weight: 700; letter-spacing: .14em; font-size: 12px; text-transform: uppercase; display: block; color: var(--navy); }
+  .ssp label em { font-style: normal; font-size: 13px; color: var(--muted); display: block; margin-bottom: 6px; min-height: 40px; }
+  .ssp textarea { min-height: 110px; resize: vertical; }
+
+  /* Actions */
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-weight: 600; font-size: 15px; padding: 13px 20px; border-radius: 10px; border: 2px solid var(--navy); background: var(--navy); color: #fff; cursor: pointer; text-decoration: none; }
+  .btn:hover { background: #2a2c45; }
+  .btn.ghost { background: #fff; color: var(--navy); }
+  .btn.gold { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+  .btn.gold:hover { background: #d4b25a; }
+  .btn[disabled] { opacity: .5; cursor: not-allowed; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+  .msg { font-size: 14px; margin-top: 10px; }
+  .msg.ok { color: var(--green); } .msg.err { color: var(--red); }
+  .consent { font-size: 12px; color: var(--muted); margin: 8px 0 12px; }
+  .cta { background: var(--navy); color: #fff; border-radius: 16px; padding: 28px 22px; text-align: center; margin: 18px 0; }
+  .cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 30px); margin: 0 0 8px; }
+  .cta p { max-width: 620px; margin: 0 auto 18px; color: #d7d6e0; }
+
+  footer { text-align: center; padding: 26px 0 40px; font-size: 13px; color: var(--muted); }
+  footer .brand { font-size: 20px; color: var(--navy); }
+  .print-only { display: none; }
+
+  @media (max-width: 760px) {
+    .results { grid-template-columns: 1fr; }
+    .zones, .levels { grid-template-columns: 1fr 1fr; }
+    .reading, .ssp, .actions { grid-template-columns: 1fr; }
+    .who { grid-template-columns: 1fr; }
+    .ssp label em { min-height: 0; }
+  }
+  @media (max-width: 420px) { .row2 { grid-template-columns: 1fr; } .fdn-avg span { display: none; } }
+
+  @media print {
+    @page { margin: 12mm; }
+    body { background: #fff; font-size: 12px; }
+    .no-print { display: none !important; }
+    .print-only { display: block; }
+    .hero { background: #fff; color: var(--navy); padding: 0 0 8px; }
+    .hero .quote { color: var(--navy); font-size: 13px; }
+    .brand { font-size: 28px; }
+    .topbar, .intro { display: none; }
+    .card, .fdn, .results { break-inside: avoid; border-color: #ccc; margin: 8px 0; }
+    .results { grid-template-columns: 1fr 1fr; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .fdn-body { display: block !important; padding-bottom: 4px; }
+    .fdn-intro, .learn, .detail, input[type=range], .ticks, .chev { display: none !important; }
+    .item { padding: 4px 0; }
+    .item-score b { font-size: 14px; }
+    .fdn-head { padding: 8px 12px; }
+    .ssp textarea { border: 1px solid #ccc; min-height: 60px; }
+    .cta { background: #fff; color: var(--navy); border: 1px solid #ccc; padding: 10px; }
+    .cta p { color: var(--navy); }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar no-print">
+      <a href="/">&larr; tamien-dysart.com</a>
+      <a href="5-Foundation-Baseline-Assessment-Guide.pdf" target="_blank" rel="noopener">Companion guide (PDF)</a>
+    </div>
+    <p class="brand"><span class="g">ELEVATE</span> YOU</p>
+    <hr class="rule">
+    <h1>5-Foundation Baseline Assessment</h1>
+    <p class="quote">The real secret of success is only found through self-discovery. The journey toward self-discovery begins with an honest inner assessment of our current life.</p>
+    <p class="tag">You are the author of your life</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="card intro no-print">
+    <h2 class="section-title">Before you begin</h2>
+    <p class="small">Rate each of the 30 areas from 1 to 10. Tap <b>Learn more</b> under any area for a plain-language description, questions to ask yourself, and what each score looks like.</p>
+    <div class="zones">
+      <div class="zone z1"><b>1–3</b>Depleting</div>
+      <div class="zone z2"><b>4–6</b>Maintenance</div>
+      <div class="zone z3"><b>7–8</b>Intentional</div>
+      <div class="zone z4"><b>9–10</b>Elite</div>
+    </div>
+    <ol class="rules">
+      <li><b>Rate your reality, not your intentions.</b> Score what you actually do.</li>
+      <li><b>Think about the last 30 days.</b> Your typical, ordinary days.</li>
+      <li><b>Low scores are not failures.</b> A 2 is a starting point, not a grade.</li>
+      <li><b>Watch for the "5 trap."</b> If you land on 5, ask: is it truly average, or am I avoiding the truth?</li>
+      <li><b>Ask someone who knows you</b> if you are unsure. Others often see what we cannot.</li>
+    </ol>
+    <a class="guide-link" href="5-Foundation-Baseline-Assessment-Guide.pdf" target="_blank" rel="noopener">Download the full companion guide (PDF) &rarr;</a>
+  </section>
+
+  <section class="card who">
+    <label class="f"><span>Full name</span><input type="text" id="fullname" placeholder="Enter your name" autocomplete="name"></label>
+    <label class="f"><span>Date</span><input type="date" id="date"></label>
+  </section>
+
+  <section class="results" aria-label="Your results">
+    <div class="wheel" id="wheel"></div>
+    <div class="side">
+      <div class="overall">
+        <div class="eyebrow" style="color:#b9b9c8">Overall baseline</div>
+        <div class="ring" id="overall">–</div>
+        <div class="zone-label" id="overallZone">Not rated yet</div>
+        <div class="progress no-print" id="progress">0 of 30 areas rated</div>
+      </div>
+      <ul class="fscores" id="fscores"></ul>
+      <div class="legend">
+        <span style="--c:var(--elite)">9–10 Elite</span>
+        <span style="--c:var(--green)">7–8 Intentional</span>
+        <span style="--c:var(--orange)">4–6 Maintenance</span>
+        <span style="--c:var(--red)">1–3 Depleting</span>
+      </div>
+    </div>
+  </section>
+
+  <div id="foundations"></div>
+
+  <section class="card" id="readingCard">
+    <h2 class="section-title">Reading your results</h2>
+    <div class="reading">
+      <div><b>Biggest opportunity</b><span id="lowest">Rate all five foundations to see this.</span><p class="small" style="margin:6px 0 0">Your lowest foundation. Small improvements here tend to lift everything else.</p></div>
+      <div><b>Your strength</b><span id="highest">–</span><p class="small" style="margin:6px 0 0">Your highest foundation. Protect it, and use it as a lever to raise the others.</p></div>
+      <div><b>Balance</b><span id="gap">–</span><p class="small" style="margin:6px 0 0">A balanced wheel rolls further than a lopsided one, even if the overall score is lower.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Stop · Start · Protect</h2>
+    <p class="small">Based on your scores, decide what to change and what to keep.</p>
+    <div class="ssp">
+      <label><span>Stop</span><em>One habit, person, or trigger to remove now.</em><textarea id="stop" placeholder="Write here…"></textarea></label>
+      <label><span>Start</span><em>One small habit (5 minutes or less) to begin this week.</em><textarea id="start" placeholder="Write here…"></textarea></label>
+      <label><span>Protect</span><em>One strength you will safeguard at all costs.</em><textarea id="protect" placeholder="Write here…"></textarea></label>
+    </div>
+  </section>
+
+  <section class="actions no-print">
+    <div class="card" style="margin:0">
+      <h2 class="section-title">Keep your results</h2>
+      <p class="small">Print or save as PDF now, or get a copy sent to your inbox.</p>
+      <button class="btn ghost" id="printBtn" type="button">Print my assessment</button>
+    </div>
+    <form class="card" style="margin:0" id="emailForm" novalidate>
+      <h2 class="section-title">Email my results</h2>
+      <div class="row2">
+        <label class="f"><span>First name</span><input type="text" id="firstname" autocomplete="given-name" required></label>
+        <label class="f"><span>Last name</span><input type="text" id="lastname" autocomplete="family-name" required></label>
+      </div>
+      <label class="f"><span>Email</span><input type="email" id="email" autocomplete="email" required></label>
+      <p class="consent">We'll email your results and occasional follow-up from Elevate You. Unsubscribe anytime.</p>
+      <button class="btn" id="sendBtn" type="submit">Send my results</button>
+      <div class="msg" id="sendMsg" role="status"></div>
+    </form>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to close the gaps?</h2>
+    <p>Book a discovery call with Tamien to talk through your results and how we can help you adopt the behaviors to confidently and measurably step into the next best version of your life.</p>
+    <a class="btn gold no-print" id="bookBtn" href="#" target="_blank" rel="noopener">Book a discovery call</a>
+    <p class="print-only">Book a discovery call: tamien-dysart.com/assessment</p>
+  </section>
+
+</main>
+
+<footer>
+  <p class="brand"><span class="g" style="color:var(--gold)">ELEVATE</span> YOU</p>
+  <p>Elevating the way we think to elevate the way we live.</p>
+  <p class="no-print"><a href="/">tamien-dysart.com</a></p>
+</footer>
+
+<script>
+const CONFIG = {
+  portalId: '243569987',
+  formId: '',          // HubSpot form GUID, set once the form exists
+  meetingUrl: ''       // Tamien's HubSpot Meetings link
+};
+const FOUNDATIONS = [{"n": 1, "name": "Mindset & Mental Diet", "tagline": "What You Feed Your Thoughts", "intro": "Your mind is always eating. Every scroll, every conversation, every thought you replay is a meal. Most people never ask what they are feeding their mind, so the world decides for them. This foundation looks at the information you take in, the voice inside your head, and how you use your attention. You do not need to be a deep thinker to rate this well. You only need to be honest about what fills your head on an ordinary day."}, {"n": 2, "name": "Body, Energy & Vitality", "tagline": "What You Feed Your Vessel", "intro": "Your body is the vehicle that carries every dream you have. Energy is the currency of action: without it, even the best intentions stall. This foundation looks at how you fuel, rest, move, and care for your body. You do not need to be an athlete or a health expert. You only need to notice how your body actually feels and what you actually put into it during a normal week."}, {"n": 3, "name": "Spheres of Influence", "tagline": "Who You Feed Your Time With", "intro": "You become like the people you spend the most time with: their habits, their expectations, their energy. Rising tides lift all boats, and sinking ones pull them down. This foundation looks at who surrounds you, how you show up for them, and whether your relationships help you rise or hold you in place. Rate the relationships you actually have, not the ones you wish you had."}, {"n": 4, "name": "Physical & Cultural Environments", "tagline": "Where You Anchor Your Days", "intro": "Your surroundings shape your behavior more than your willpower does. If your environment works against your goals, you will eventually lose the fight. This foundation looks at the physical and emotional spaces you live in: your home, your work, your community, and the outdoors. Picture each place as it really looks right now, not as it looks on a good day."}, {"n": 5, "name": "Spirit & Soul", "tagline": "What Feeds Your Core Purpose", "intro": "This foundation reaches beneath behavior to the deepest part of you: your purpose, your values, your peace, and your connection to something greater than yourself. Whatever your faith or beliefs, everyone has a soul that needs feeding. Without it, outward success can still feel empty inside. Some of these questions may feel unfamiliar. That is okay. Unfamiliar is often where the most honest answers live."}];
+const ITEMS = [{"id": "1.1", "title": "Information & Media Consumption", "means": "This is everything you watch, read, listen to, and scroll through: news, social media, TV, YouTube, podcasts, group chats, and music. Think of it as the diet of your mind. Just like food, some of it nourishes you and some of it is junk that tastes good in the moment but leaves you worse off.", "why": "What you consume repeatedly becomes what you believe is normal. A steady stream of outrage, gossip, and comparison quietly trains you to feel anxious, angry, or not enough, even when nothing in your actual life has changed.", "questions": ["How many hours a day am I on my phone or screens? (Check your screen-time setting before you guess.)", "After I finish scrolling or watching, do I usually feel better, worse, or numb?", "Do I choose what I consume, or does an app choose it for me?", "Is the first thing I take in each morning something that builds me up or something that stresses me out?"], "levels": ["Hours of mindless scrolling daily. Phone is the first and last thing you touch. You often feel drained, angry, or jealous afterward.", "A mix of helpful and junk content. You sometimes catch yourself wasting time but rarely change anything.", "You mostly choose what you consume on purpose. You have some limits, like no phone at meals or unfollowing negative accounts.", "Your inputs are curated and intentional. Most of what you consume teaches, inspires, or genuinely restores you."], "blindspot": "Many people rate this high because they 'only watch the news to stay informed.' If it leaves you tense and fearful, it is still junk food for the mind.", "f": 1}, {"id": "1.2", "title": "Internal Dialogue & Self-Narrative", "means": "This is the voice in your head and the way it talks to you. When you make a mistake, what does it say? When you look in the mirror, what story does it tell? Your self-narrative is the bigger story you believe about who you are: 'I always mess things up,' or 'I figure things out.'", "why": "You talk to yourself more than anyone else ever will. If that voice is a harsh critic or a constant complainer, it shapes your confidence, your choices, and what you believe you deserve. You are the author of your life, and this voice is holding the pen.", "questions": ["If a friend talked to me the way I talk to myself, would I still be friends with them?", "When something goes wrong, do I blame myself harshly, blame others, or look for what I can learn?", "Do I use words like 'always,' 'never,' 'I can't,' or 'that's just how I am'?", "What three words would I use to describe myself, and are they kind or cruel?"], "levels": ["The inner voice is mostly critical, hopeless, or blaming. You often feel like a victim of your circumstances.", "Some days the voice is supportive, other days it tears you down. You have not really paid attention to it.", "You notice negative selftalk and can usually redirect it. You take ownership more than you make excuses.", "Your inner voice is honest but encouraging, like a good coach. You own your story and speak about yourself with respect."], "blindspot": "Negative self-talk often hides as 'just being realistic' or humor. Jokes like 'I'm such an idiot' still program the mind.", "f": 1}, {"id": "1.3", "title": "Intellectual Growth & Deliberate Learning", "means": "This is whether you are actively learning and growing your mind, not just being entertained. It includes reading books, taking classes, learning a skill, asking questions, or listening to things that stretch your thinking. It is the difference between feeding your mind and just filling time.", "why": "A mind that stops learning starts shrinking. Learning builds confidence, opens new opportunities, and gives you new ways to solve old problems. You are your greatest asset, and learning is how you invest in that asset.", "questions": ["When was the last time I learned something new on purpose?", "Have I read (or listened to) a full book in the last three months?", "Is there a skill I have been wanting to learn that I keep putting off?", "Do I spend more time being entertained or being educated?"], "levels": ["You rarely, if ever, learn anything new on purpose. Most of your free time goes to entertainment.", "You learn occasionally when something comes up, but there is no real habit or direction.", "You regularly read, study, or practice something that grows you, at least a few times a week.", "Learning is a daily priority. You seek out ideas that challenge you and apply what you learn."], "blindspot": "Watching short clips of 'tips' can feel like learning. Real learning usually requires focus, practice, and applying it to your life.", "f": 1}, {"id": "1.4", "title": "Cognitive Hygiene & Mental Space", "means": "Just like you clean your body, your mind needs cleaning too. This is about whether you ever give your mind quiet time: moments with no phone, no TV, no noise, just you and your thoughts. It is space to think, reflect, process feelings, and let your mind rest.", "why": "When every empty moment is filled with a screen, your mind never gets to sort through what is happening in your life. Unprocessed stress piles up like dirty laundry. Quiet space is where clarity, creativity, and peace show up.", "questions": ["Can I sit in a waiting room or a line without reaching for my phone?", "When was the last time I was alone with my thoughts for 15 minutes or more?", "Do I fall asleep with a screen or noise on because silence feels uncomfortable?", "Does my mind feel cluttered and racing, or calm and clear most days?"], "levels": ["Silence feels uncomfortable or impossible. Your mind feels constantly crowded, racing, or foggy.", "You get quiet moments by accident, like in the shower, but never create them on purpose.", "You build in some quiet time, like a walk without headphones or a few minutes of reflection.", "You protect daily time for stillness and reflection. Your mind usually feels clear and settled."], "blindspot": "Being busy is not the same as having a full mind. Many people mistake constant stimulation for productivity.", "f": 1}, {"id": "1.5", "title": "Limiting Beliefs & Edge Paradigms", "means": "A limiting belief is something you believe about yourself or the world that holds you back, often without realizing it. Examples: 'People like me don't get ahead,' 'I'm not smart enough,' 'Money is evil,' or 'It's too late for me.' Your 'edge' is the boundary of what you believe is possible for you.", "why": "You will never rise above what you believe you can do. Limiting beliefs usually come from childhood, past failures, or what others told us. They feel like facts, but they are just old stories. Once you see them, you can rewrite them.", "questions": ["What is something I want but secretly believe I could never have?", "What did I hear growing up about money, success, love, or people like me?", "Where do I say 'I'm just not a ___ person'?", "What would I attempt if I knew I could not fail?"], "levels": ["You strongly believe your situation cannot change. Many goals feel impossible, so you have stopped trying.", "You have some sense that old beliefs hold you back, but you have not examined or challenged them.", "You can name several of your limiting beliefs and are actively testing and pushing past them.", "You regularly challenge your own assumptions and live beyond the limits you once accepted."], "blindspot": "The most powerful limiting beliefs feel like plain truth, not beliefs. If you cannot name any, that may be a sign they are well hidden.", "f": 1}, {"id": "1.6", "title": "Focus & Attention Stewardship", "means": "'Stewardship' means taking care of something valuable. Your attention is one of the most valuable things you have. This is about whether you can focus on one thing at a time, finish what you start, and direct your attention where you want it, instead of being pulled in a hundred directions.", "why": "Where your attention goes, your life follows. If you are constantly distracted, interrupted, or jumping between tasks, important goals never get the focus they need. Many apps are built to steal attention. Protecting it is an act of self-respect.", "questions": ["Can I work on one task for 30 minutes without checking my phone?", "How many unfinished projects or tasks are hanging over me right now?", "Do I feel busy all day but accomplish little that truly matters?", "Do notifications control my day, or do I control them?"], "levels": ["You are constantly distracted. It is hard to finish things, and your phone interrupts almost everything.", "You can focus when you have to, but distraction is the default and you rarely protect your attention.", "You have habits that protect focus, like silencing notifications or setting priorities each day.", "You direct your attention with intention and regularly complete deep, meaningful work."], "blindspot": "Multitasking feels efficient, but it usually means doing several things poorly. Being 'good at multitasking' is often a sign of scattered attention.", "f": 1}, {"id": "2.1", "title": "Nutritional Fuel & Hydration", "means": "This is what you eat and drink, and how it affects your energy. Fuel means food that gives you steady energy, like vegetables, fruit, protein, and whole grains. Junk means things like fast food, sugary drinks, chips, and candy. Hydration is how much water you drink.", "why": "Food is not just about weight. It directly affects your mood, focus, sleep, and energy. Energy crashes, brain fog, and irritability are often the result of what you ate hours earlier. Most people are also mildly dehydrated without realizing it.", "questions": ["How many glasses of plain water do I drink in a typical day?", "How often do I eat fast food, fried food, or sugary snacks?", "Do I feel sleepy or sluggish after I eat?", "Do I eat when I am stressed, bored, or sad rather than hungry?"], "levels": ["Most meals are fast food, processed, or skipped. You drink very little water and energy swings are common.", "You eat some healthy meals but also a lot of convenience food. Water intake is inconsistent.", "You mostly eat real, whole foods and drink water regularly. Treats are occasional, not constant.", "You fuel your body intentionally, stay well hydrated, and notice how food affects your energy."], "blindspot": "Coffee, soda, and energy drinks do not count as hydration. Many people mistake thirst for hunger.", "f": 2}, {"id": "2.2", "title": "Sleep Architecture & Rest Quality", "means": "'Sleep architecture' simply means the structure of your sleep: how much you get, how consistent it is, and how deep and restful it is. It includes your bedtime routine, whether you go to bed and wake up at similar times, and how you feel when you wake up.", "why": "Sleep is when your body repairs itself and your brain sorts through the day. Poor sleep affects your mood, patience, decisions, cravings, and health. Almost nothing else in this assessment works well when sleep is broken.", "questions": ["How many hours of sleep do I actually get most nights?", "Do I go to bed and wake up at roughly the same time each day?", "Do I wake up feeling rested, or do I need caffeine just to function?", "Am I on my phone or watching TV right up until I fall asleep?"], "levels": ["You regularly get less than 6 hours, sleep at random times, and wake up exhausted.", "Sleep is okay some nights and poor on others. You have no real routine.", "You usually get 7 or more hours with a fairly consistent schedule and wake up mostly rested.", "Sleep is a protected priority with a calming wind-down routine. You wake up refreshed and alert."], "blindspot": "Many people say they 'function fine' on little sleep. Research consistently shows that tired people are poor judges of how impaired they are.", "f": 2}, {"id": "2.3", "title": "Movement, Strength & Physical Capacity", "means": "This is how much you move your body and how capable it is. It includes walking, exercise, lifting, stretching, sports, or physical work. 'Sedentary' means sitting most of the day. Physical capacity means being able to do daily tasks, like climbing stairs or carrying groceries, without strain.", "why": "Your body was made to move. Movement improves mood, reduces stress, sharpens thinking, and keeps you independent as you age. Even small amounts of daily movement make a big difference.", "questions": ["How many days a week do I intentionally move for at least 30 minutes?", "How many hours a day do I spend sitting?", "Can I climb a few flights of stairs or play with kids without getting winded?", "Do I feel strong and capable in my body, or stiff and weak?"], "levels": ["You rarely move beyond what is required. Simple physical tasks feel hard or painful.", "You move sometimes, but there is no consistent routine. You sit most of the day.", "You exercise or move intentionally several times a week and feel fairly capable.", "Movement is a daily habit. You feel strong, mobile, and physically ready for life."], "blindspot": "Being busy and on your feet is not the same as building strength. Stresswalking around all day is not exercise.", "f": 2}, {"id": "2.4", "title": "Nervous System Regulation & Stress Discharge", "means": "Your nervous system is your body's alarm system. When stressed, it goes into 'fight or flight' mode: racing heart, tight chest, short temper. 'Regulation' means being able to calm yourself back down. 'Stress discharge' means releasing built-up stress in healthy ways like deep breathing, walking, prayer, or time in nature.", "why": "Stress is not the problem. Stress with no release is. When your alarm system stays on all the time, it wears down your health, relationships, and decision making. Learning to come back to calm is a life skill most people were never taught.", "questions": ["Do I feel tense, on edge, or wound up most of the time?", "When I am stressed, what do I do to calm down? Is it healthy?", "Do I snap at people over small things?", "Do I know any techniques, like slow breathing, that help me calm my body?"], "levels": ["You feel constantly stressed, anxious, or on edge. You calm down mainly through substances, food, or shutting down.", "Stress comes and goes. You sometimes recover well but have no reliable tools.", "You recognize when you are stressed and use healthy tools to bring yourself back to calm.", "You have daily practices that keep your stress low, and you recover quickly from hard moments."], "blindspot": "If you have lived in stress for years, it can feel normal. Constant tension is common, but it is not healthy.", "f": 2}, {"id": "2.5", "title": "Toxic Load & Chemical Intake", "means": "This is an honest look at substances you put in your body that can harm you or that you depend on: alcohol, nicotine or vaping, too much caffeine, energy drinks, marijuana, pills not used as prescribed, or other drugs. 'Toxic load' is the total burden these place on your body.", "why": "Substances often start as a way to cope, relax, or get through the day. Over time they can drain your energy, money, relationships, and freedom. This is not about judgment. It is about getting an honest baseline so you know where you stand.", "questions": ["Do I use any substance almost every day?", "Do I feel like I need something to relax, sleep, wake up, or have fun?", "Have people close to me ever expressed concern about my use of anything?", "Could I go two weeks without it easily? Honestly?"], "levels": ["You depend on one or more substances daily to cope or function, and it is affecting your life.", "You use some substances regularly. It is not out of control, but it is more than you would like.", "Use is occasional and in control. You do not rely on anything to get through the day.", "You are fully in charge of what enters your body and rarely or never rely on substances."], "blindspot": "Because caffeine, alcohol, and nicotine are legal and common, people rarely see dependence on them as dependence.", "f": 2}, {"id": "2.6", "title": "Body Awareness & Biofeedback", "means": "Your body constantly sends signals: tight shoulders, headaches, stomach problems, fatigue, aches. 'Biofeedback' is the information your body is giving you. Body awareness is whether you notice and listen to these signals, or ignore them until something breaks.", "why": "Your body usually whispers before it screams. Burnout, illness, and injury often come with early warning signs. People who listen early can make small changes instead of being forced into big ones later.", "questions": ["Do I have ongoing aches, pains, or health issues I keep ignoring?", "When was my last checkup with a doctor or dentist?", "Can I tell where in my body I hold stress?", "Do I push through exhaustion until I get sick?"], "levels": ["You ignore pain and warning signs, avoid doctors, and often push until you crash or get sick.", "You notice some signals but usually wait until they become serious before acting.", "You pay attention to your body, rest when needed, and keep up with basic checkups.", "You are deeply in tune with your body and respond early to what it tells you."], "blindspot": "Pride in being 'tough' and pushing through pain can turn small issues into big ones.", "f": 2}, {"id": "3.1", "title": "Inner Circle & Confidants (Top 5)", "means": "Your inner circle is the handful of people you spend the most time with and trust the most: close friends, a partner, family members, roommates, or coworkers. A 'confidant' is someone you can tell the truth to. Write down the five people you spend the most time with before you rate this.", "why": "The people closest to you shape what you think is normal, what you think is possible, and what you think you deserve. If your circle is growing, you are pulled up. If it is stuck, cynical, or reckless, you are pulled down, often without noticing.", "questions": ["Who are the five people I spend the most time with?", "Do they encourage my growth, or do they mock it, ignore it, or feel threatened by it?", "Would I want my life to look like theirs in five years?", "Is there at least one person I can be completely honest with?"], "levels": ["Your closest people mostly drag you down, encourage bad habits, or you have no one you truly trust.", "Your circle is a mix. Some people support you, others hold you back, and you have not thought much about it.", "Most of your inner circle is positive, honest, and supportive of your goals.", "Your circle is intentional. They challenge you, celebrate you, and are growing too."], "blindspot": "Loyalty can keep us close to people who hurt our growth. Loving someone and letting them shape your direction are two different things.", "f": 3}, {"id": "3.2", "title": "Professional & Collaborative Network", "means": "These are the people you work with or around: coworkers, bosses, clients, business contacts, classmates, or people in your field. Your 'network' is the web of people who know you, trust you, and could open doors for you, and whom you could help in return.", "why": "Opportunities almost always come through people. A healthy network brings ideas, jobs, referrals, and support. A toxic or nonexistent network leaves you isolated and stuck. You do not need to be a businessperson for this to matter.", "questions": ["Do I have positive relationships with the people I work with?", "If I needed a job or reference tomorrow, who could I call?", "Am I known as someone reliable, helpful, and easy to work with?", "Do I avoid workplace gossip and drama, or am I in the middle of it?"], "levels": ["Work relationships are tense, negative, or nonexistent. You have no one professionally in your corner.", "You get along with people at work but have not built real connections beyond the basics.", "You have solid, respectful work relationships and a few people who would vouch for you.", "You have a strong, growing network built on trust where people lift each other up."], "blindspot": "Many people think networking is only for executives. Every job, from line cook to CEO, runs on relationships.", "f": 3}, {"id": "3.3", "title": "Relational Boundaries & Drain Management", "means": "A 'boundary' is a line that protects your time, energy, and well-being, like saying no, limiting time with certain people, or not tolerating disrespect. 'Drains' are people or relationships that leave you exhausted: constant complainers, manipulators, people who only call when they need something, or relationships built on guilt.", "why": "Without boundaries, your energy belongs to whoever demands it most. Setting boundaries is not selfish or mean. It is how you protect your ability to show up well for the people and goals that matter most.", "questions": ["Is there someone in my life who leaves me drained almost every time we talk?", "Do I say yes when I really want to say no?", "Do I feel guilty or afraid when I try to set limits with people?", "Do people regularly cross lines with me that I let slide?"], "levels": ["You rarely say no. Several relationships drain you, and you feel used, resentful, or trapped.", "You set boundaries sometimes, but guilt or fear often wins. A few drains remain.", "You generally protect your energy and can say no respectfully, even when it is uncomfortable.", "You hold clear, loving boundaries consistently, and draining relationships have little hold on you."], "blindspot": "People-pleasers often rate themselves as 'nice' rather than seeing a boundary problem. Resentment is usually a sign that a boundary is missing.", "f": 3}, {"id": "3.4", "title": "Mentorship, Apprenticeship & Counsel", "means": "A mentor is someone further down the road than you who shares wisdom and guidance. This could be a boss, pastor, coach, sponsor, teacher, counselor, or older friend. 'Counsel' means seeking advice from wise people before big decisions, instead of figuring everything out alone.", "why": "No one rises alone. Mentors help you avoid mistakes they already made, see blind spots you cannot see, and believe in you before you believe in yourself. Learning from others' experience is one of the fastest ways to grow.", "questions": ["Is there someone I look up to who I can go to for guidance?", "When I face a big decision, who do I ask for advice?", "Do I only take advice from people at my same level, or people who have gone further?", "Am I too proud or too afraid to ask for help?"], "levels": ["You have no mentors or wise counsel and tend to figure everything out alone.", "You occasionally ask for advice, but there is no ongoing mentorship in your life.", "You have at least one person you regularly learn from and seek out for guidance.", "You actively seek mentors in several areas of life and apply what you learn."], "blindspot": "Asking friends who are in the same situation as you can feel like counsel, but it often just confirms what you already think.", "f": 3}, {"id": "3.5", "title": "Reciprocal Contribution & Pouring Into Others", "means": "'Reciprocal' means two-way. This is about whether you give as well as receive: encouraging others, helping, volunteering, mentoring someone younger, or simply being the person who shows up. 'Pouring into others' means investing your time and energy in someone else's growth.", "why": "Giving builds purpose and connection. People who help others tend to feel more fulfilled and less stuck in their own problems. Better individuals build better communities, and that starts with what you offer, not just what you get.", "questions": ["Who am I currently helping, encouraging, or supporting?", "In my relationships, am I mostly giving, mostly taking, or balanced?", "When was the last time I did something kind with no expectation of return?", "Is there someone a few steps behind me I could help?"], "levels": ["You are mostly focused on survival or yourself and rarely give time or energy to others.", "You help when asked but do not intentionally invest in others.", "You regularly encourage, help, or serve others and your relationships feel balanced.", "Pouring into others is part of who you are. You mentor, serve, and lift people consistently."], "blindspot": "Some people give so much they have nothing left. Healthy giving is not the same as self-sacrifice. Check that you are also receiving.", "f": 3}, {"id": "3.6", "title": "Familial & Intimate Alignment", "means": "This is about your closest bonds: family members, a spouse or partner, and children. 'Alignment' means you are on the same page, feel safe with each other, communicate honestly, and spend real quality time together, not just share a roof.", "why": "These relationships affect you more than almost anything else. When home relationships are strained, everything else feels heavier. When they are healthy, they become your foundation and your fuel.", "questions": ["Do I feel emotionally safe with my family or partner?", "When was the last time we had real, phone-free quality time together?", "Are there unresolved conflicts we keep avoiding?", "Are we working toward a shared vision, or just living parallel lives?"], "levels": ["Family or intimate relationships are broken, hostile, or absent. Home feels unsafe or lonely.", "Relationships are okay but distant. Real connection and honest conversation are rare.", "You have loving, honest relationships with regular quality time, even if not perfect.", "Your closest relationships are deeply connected, supportive, and aligned around a shared vision."], "blindspot": "Living together or not fighting does not always mean connection. Peaceful distance can feel fine while slowly eroding the relationship.", "f": 3}, {"id": "4.1", "title": "The Home Sanctuary", "means": "A sanctuary is a place of safety and peace. This is about your living space: is it clean, organized, and calm, or cluttered, chaotic, and stressful? It includes lighting, noise, smell, and whether you have spaces set aside for rest, connection, and focus.", "why": "Your home is where you start and end every day. A cluttered, chaotic home creates a cluttered, chaotic mind. A peaceful, ordered home helps you rest, recharge, and think clearly. This is true no matter how big or small your space is.", "questions": ["When I walk into my home, do I feel peace or stress?", "Are there piles, clutter, or unfinished chores that weigh on me?", "Do I have a spot that is just for rest or reflection?", "Would I feel comfortable having someone over right now?"], "levels": ["Home feels chaotic, dirty, unsafe, or stressful. You do not look forward to being there.", "Home is livable but often messy. It does not actively help you rest or focus.", "Home is mostly clean, organized, and peaceful, with a few areas that need work.", "Home is a true sanctuary that is ordered, calm, and set up to support the life you want."], "blindspot": "We stop seeing clutter after we live with it long enough. Try looking at your space as a visitor would.", "f": 4}, {"id": "4.2", "title": "The Professional / Work Domain", "means": "This is the physical and digital setup of where you work or study: your desk, locker, truck, workstation, or kitchen table. It also includes your digital space like email inbox, phone apps, files, and notifications. Is it organized and set up to help you do your best work?", "why": "A disorganized workspace wastes time, increases stress, and makes it harder to focus. A well set-up space quietly makes you more effective every day. Small changes here, like clearing your desk or turning off notifications, have big returns.", "questions": ["Can I find what I need quickly when I am working?", "How many unread emails or notifications are sitting on my phone right now?", "Is my workspace comfortable, or does it cause pain or strain?", "Does my work area help me focus or distract me?"], "levels": ["Your workspace is cluttered or chaotic, physically and digitally. You often lose things and feel overwhelmed.", "Your workspace functions, but it is messy and not set up to help you focus.", "Your workspace is mostly organized and comfortable, with good habits for keeping it that way.", "Your physical and digital workspace is clean, efficient, and designed for focused work."], "blindspot": "Digital clutter counts. A clean desk with 3,000 unread emails is still a cluttered workspace.", "f": 4}, {"id": "4.3", "title": "Workplace Culture & Relational Climate", "means": "'Culture' is the feeling and unwritten rules of a place. 'Relational climate' is the emotional atmosphere between people. At your job, school, or main daily setting, is there trust, respect, and a drive for excellence? Or fear, gossip, and people just doing the minimum?", "why": "You likely spend more waking hours at work than anywhere else. A toxic culture seeps into your mood, health, and home life. A healthy culture brings out your best. Even if you cannot change the culture, you can see it clearly and choose how you show up in it.", "questions": ["Do I dread going to work, or do I mostly feel okay about it?", "Do I feel safe speaking up, asking questions, or admitting mistakes?", "Is gossip, blame, or drama common where I work?", "Do I contribute to a positive culture or add to the negativity?"], "levels": ["Your daily environment is toxic, fearful, or hostile, and it is harming your well-being.", "The culture is neutral. It is not terrible, but not inspiring. People mostly go through the motions.", "The culture is mostly respectful and positive, and you feel valued most of the time.", "You are in a culture of trust and excellence, and you actively help strengthen it."], "blindspot": "If you are not currently working, rate the main group setting you are in daily, such as school, a program, or a volunteer role.", "f": 4}, {"id": "4.4", "title": "Local Community & Civic Ecosystem", "means": "This is about your connection to the place you live: your neighborhood, city, church, clubs, local groups, and community events. 'Civic' means being an active participant in your community rather than just living in it. 'Ecosystem' means all the people and places that make up your local world.", "why": "Community transformation starts with self-transformation, and self-transformation is fueled by community. People who feel connected to their community are healthier, happier, and more resilient. Isolation is one of the biggest hidden threats to well-being.", "questions": ["Do I know my neighbors by name?", "Am I part of any group, church, team, or club in my community?", "Do I feel like I belong where I live?", "When was the last time I attended a local event or volunteered?"], "levels": ["You feel isolated or disconnected from your community and are not involved in anything local.", "You live in your community but are not really part of it. Involvement is rare.", "You are connected to at least one community group and feel a sense of belonging.", "You are an active, contributing member of your community and help make it better."], "blindspot": "Online communities can be valuable, but they rarely replace the belonging of face-to-face local connection.", "f": 4}, {"id": "4.5", "title": "Nature & Open Spaces", "means": "This is how often you get outside: sunlight, fresh air, parks, trees, water, open sky. It includes walks, sitting outside, gardening, hiking, or simply stepping outdoors during the day instead of staying inside from morning to night.", "why": "Time outdoors lowers stress, improves mood, helps regulate sleep, and resets perspective. Morning sunlight in particular helps set your body's internal clock. Many people go days without real outdoor time and do not realize what it costs them.", "questions": ["How many minutes did I spend outside yesterday, not counting walking to a car?", "When was the last time I spent time in a park, by water, or in nature?", "Do I get sunlight in the morning?", "Do I feel different after time outdoors?"], "levels": ["You rarely go outside except to get from one building to another.", "You get outside occasionally, usually by accident rather than on purpose.", "You make time to be outdoors several times a week and notice the benefits.", "Time in nature and sunlight is a daily, protected part of your life."], "blindspot": "Weather and busy schedules become easy excuses. Even ten minutes outside counts.", "f": 4}, {"id": "4.6", "title": "Environmental Triggers & Defaults", "means": "A 'trigger' is something in your surroundings that prompts a behavior, like seeing chips on the counter and eating them. A 'default' is what happens automatically when you do not think about it. This is about whether your spaces make good habits easy and bad habits hard, or the opposite.", "why": "Willpower runs out. Environment does not. If your phone is on your nightstand, you will scroll in bed. If your running shoes are by the door, you are more likely to walk. Designing your space is one of the easiest ways to change your behavior.", "questions": ["What unhealthy things are easy to reach in my home (junk food, alcohol, remote, phone)?", "What healthy things are hidden away or hard to get to?", "Where does my phone sleep at night?", "What do I automatically do when I walk in the door after a long day?"], "levels": ["Your spaces make bad habits easy and good habits hard. You rely only on willpower, and it keeps failing.", "You have not really thought about how your space affects your habits.", "You have made some changes to set yourself up for success, like moving the phone or prepping meals.", "Your spaces are intentionally designed so good choices are the easiest choices."], "blindspot": "People often blame lack of discipline when the real problem is an environment working against them.", "f": 4}, {"id": "5.1", "title": "Higher Purpose & Mission (The \"Why\")", "means": "Your purpose is your reason for getting up in the morning beyond just paying bills. It is your 'why': what you are here to do, who you are here to serve, and what you stand for. A mission is that purpose put into action. You do not need it all figured out to rate this honestly.", "why": "People with a clear why can endure almost any how. Purpose gives meaning to hard days, direction to decisions, and strength to keep going. Without it, life can feel like going through the motions: existing instead of living.", "questions": ["If someone asked why I do what I do, could I answer?", "Do I feel my life matters and is moving in a meaningful direction?", "What would I want to be remembered for?", "Do I feel like I am existing or truly living?"], "levels": ["You feel lost, empty, or purposeless, and life feels like just getting through each day.", "You have a vague sense of purpose but it rarely guides your daily choices.", "You have a fairly clear sense of purpose, and it shapes many of your decisions.", "You live with a clear, compelling mission that drives your daily choices and gives life deep meaning."], "blindspot": "Purpose is not only for people with big careers or callings. Raising a child well, staying sober, or serving your neighbors can be a powerful mission.", "f": 5}, {"id": "5.2", "title": "Spiritual Practices & Stillness", "means": "These are regular habits that connect you to God, a higher power, or deep inner peace. Examples include prayer, meditation, reading scripture or inspiring texts, worship, journaling, or quiet reflection. 'Stillness' means slowing down enough to listen inwardly.", "why": "Spiritual practices ground you when life gets loud. They offer perspective, peace, strength, and guidance. Like physical exercise, the benefit comes from consistency, not from doing it once in a crisis.", "questions": ["Do I have any regular practice that feeds my spirit?", "Do I only pray, reflect, or seek peace when things go wrong?", "When was the last time I felt truly at peace inside?", "Do I feel connected to something bigger than myself?"], "levels": ["You have no spiritual practice and feel disconnected or empty inside.", "You turn to prayer or reflection occasionally, usually in hard times.", "You have a regular practice that brings you peace and grounding several times a week.", "Spiritual practice is a daily anchor, and you feel deeply connected and at peace."], "blindspot": "Attending services is valuable, but it is not the same as a personal daily practice. Rate both your outward and inward connection.", "f": 5}, {"id": "5.3", "title": "Moral Integrity & Value Alignment", "means": "'Integrity' means being the same person in private as you are in public, and doing what you say you will do. 'Values' are the things you believe matter most, like honesty, family, faith, or hard work. 'Alignment' means your daily actions actually match those values.", "why": "When your actions and values do not match, you feel it as guilt, shame, or inner conflict, even if no one else knows. Living in alignment builds self-respect, trust, and peace. Leadership is not positional; it is behavioral, and it starts here.", "questions": ["What are my top three values? Does my calendar and bank account reflect them?", "Is there anything I do in private that I would be ashamed of if others knew?", "Do I keep my promises to others and to myself?", "Do I tell the truth even when it costs me?"], "levels": ["Your actions often go against what you believe, and you carry guilt or hide parts of your life.", "You live by your values some of the time, but compromise often when it is easier.", "Your actions mostly match your values, and you work to correct it when they do not.", "You live with deep integrity, consistent in private and public, and your word is trusted."], "blindspot": "It is easy to judge ourselves by our intentions and others by their actions. Rate yourself on what you actually do.", "f": 5}, {"id": "5.4", "title": "Gratitude & Reverence", "means": "Gratitude is noticing and appreciating the good in your life, big and small. 'Reverence' is a sense of awe and respect for life, people, nature, or God. The opposite is entitlement, constant complaining, or always focusing on what is missing.", "why": "Gratitude is one of the most proven ways to improve mood and well-being. It shifts your mind from scarcity, 'I don't have enough,' to abundance, 'look what I have.' What you appreciate grows in your awareness.", "questions": ["Do I spend more time complaining or appreciating?", "Could I quickly name five things I am grateful for right now?", "Do I thank people regularly and sincerely?", "Do I take time to notice beauty or good moments in my day?"], "levels": ["You mostly focus on what is wrong or missing and rarely feel grateful.", "You feel grateful sometimes, but complaining and comparison often take over.", "You regularly notice and express gratitude, and it shapes your outlook.", "Gratitude is a daily practice and a natural part of how you see life."], "blindspot": "Saying 'I'm blessed' is different from actually feeling and practicing gratitude daily.", "f": 5}, {"id": "5.5", "title": "Forgiveness, Grace & Releasing Resentment", "means": "'Resentment' is holding on to anger or bitterness about something someone did, or something you did. 'Forgiveness' means letting go of the debt, not excusing what happened, but refusing to let it keep hurting you. 'Grace' is offering kindness that was not earned, to others and to yourself.", "why": "Holding resentment is like carrying heavy bags everywhere you go. It takes up space in your mind, steals your peace, and keeps you tied to the past. Forgiveness, including forgiving yourself, frees that energy for the life you are building now.", "questions": ["Is there someone I am still angry or bitter toward?", "Do I replay old hurts or mistakes over and over?", "Have I forgiven myself for my past?", "Does thinking about a certain person or event still make my chest tighten?"], "levels": ["You carry heavy resentment or shame that affects your daily peace and relationships.", "You have let go of some things, but a few old wounds still have a strong hold.", "You have done real work on forgiveness and rarely get stuck in bitterness.", "You practice forgiveness and grace freely, toward others and yourself, and live largely free of resentment."], "blindspot": "Self-forgiveness is often the hardest and the most overlooked. Many people forgive others easily but stay harsh with themselves.", "f": 5}, {"id": "5.6", "title": "Living Legacy & Stewardship", "means": "Your legacy is the impact you leave on others and the world, not just after you are gone, but every day you are alive. 'Stewardship' means taking care of what you have been given: your time, money, talents, influence, and relationships, and using them well.", "why": "Every choice you make is writing your story and shaping the people around you, especially the next generation. When you see yourself as a steward, you stop asking 'what can I get?' and start asking 'what am I building?'", "questions": ["If my life ended today, what would people say about how I lived?", "Am I using my time, money, and talents in ways I am proud of?", "Who is watching me and learning from how I live?", "What am I building that will outlast me?"], "levels": ["You rarely think about your impact, and you waste much of your time, money, or talents.", "You care about your legacy but have not made intentional choices to build it.", "You are intentional with your resources and aware of the example you set.", "You live as a faithful steward, building a positive legacy through your daily choices."], "blindspot": "Legacy is not only about money or fame. The way you treat your children, coworkers, and neighbors is your legacy in motion.", "f": 5}];
+
+const ZONES = [
+  { max: 3, name: 'Depleting', color: 'var(--red)' },
+  { max: 6, name: 'Maintenance', color: 'var(--orange)' },
+  { max: 8, name: 'Intentional', color: 'var(--green)' },
+  { max: 10, name: 'Elite', color: 'var(--elite)' }
+];
+const LEVEL_LABELS = ['1–3 · Depleting', '4–6 · Maintenance', '7–8 · Intentional', '9–10 · Elite'];
+const LEVEL_COLORS = ['var(--red)', 'var(--orange)', 'var(--green)', 'var(--elite)'];
+const scores = {};   // item id -> 1..10
+
+function zoneFor(v) {   // integer scores and averages share the PDF bands
+  if (v < 4) return ZONES[0];
+  if (v < 7) return ZONES[1];
+  if (v < 9) return ZONES[2];
+  return ZONES[3];
+}
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function avg(list) { return list.length ? list.reduce((a, b) => a + b, 0) / list.length : null; }
+function fmt(v) { return v == null ? '–' : v.toFixed(1); }
+
+function foundationAvg(n) {
+  const vals = ITEMS.filter(i => i.f === n && scores[i.id] != null).map(i => scores[i.id]);
+  return vals.length === 6 ? avg(vals) : null;
+}
+function partialAvg(n) {
+  const vals = ITEMS.filter(i => i.f === n && scores[i.id] != null).map(i => scores[i.id]);
+  return avg(vals);
+}
+
+/* Build the five foundations */
+function build() {
+  const root = document.getElementById('foundations');
+  root.innerHTML = FOUNDATIONS.map(f => `
+    <section class="fdn" id="fdn${f.n}" style="--fc:var(--f${f.n})">
+      <button class="fdn-head" type="button" aria-expanded="false" aria-controls="fdnb${f.n}">
+        <span class="fdn-num">${f.n}</span>
+        <span class="fdn-title"><strong>${esc(f.name)}</strong><em>${esc(f.tagline)}</em></span>
+        <span class="fdn-avg"><span>Average </span><b id="favg${f.n}">–</b></span>
+        <svg class="chev no-print" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="fdn-body" id="fdnb${f.n}">
+        <p class="fdn-intro">${esc(f.intro)}</p>
+        ${ITEMS.filter(i => i.f === f.n).map(itemHtml).join('')}
+      </div>
+    </section>`).join('');
+
+  root.querySelectorAll('.fdn-head').forEach(h => h.addEventListener('click', () => {
+    const sec = h.parentElement, open = !sec.classList.contains('open');
+    sec.classList.toggle('open', open);
+    h.setAttribute('aria-expanded', open);
+  }));
+  root.querySelectorAll('.learn').forEach(b => b.addEventListener('click', () => {
+    const d = document.getElementById('d' + b.dataset.id.replace('.', '_'));
+    const show = !d.classList.contains('show');
+    d.classList.toggle('show', show);
+    b.setAttribute('aria-expanded', show);
+    b.textContent = show ? 'Hide details' : 'Learn more';
+  }));
+  root.querySelectorAll('input[type=range]').forEach(r => {
+    const rate = () => setScore(r.dataset.id, +r.value);
+    ['input', 'change', 'pointerup', 'keyup'].forEach(ev => r.addEventListener(ev, rate));
+  });
+}
+
+function itemHtml(i) {
+  const key = i.id.replace('.', '_');
+  return `
+    <div class="item unrated" id="it${key}">
+      <div class="item-top">
+        <div>
+          <div class="item-name">${esc(i.id)} ${esc(i.title)}</div>
+          <button class="learn no-print" type="button" data-id="${i.id}" aria-expanded="false" aria-controls="d${key}">Learn more</button>
+        </div>
+        <div class="item-score"><b id="v${key}">–</b><small id="z${key}">Not rated</small></div>
+      </div>
+      <input type="range" min="1" max="10" step="1" value="5" data-id="${i.id}" aria-label="${esc(i.title)} score, 1 to 10">
+      <div class="ticks"><span>1</span><span>5</span><span>10</span></div>
+      <div class="detail" id="d${key}">
+        <h4>What this means</h4><p>${esc(i.means)}</p>
+        <h4>Why it matters</h4><p>${esc(i.why)}</p>
+        <h4>Questions to ask yourself</h4><ul>${i.questions.map(q => `<li>${esc(q)}</li>`).join('')}</ul>
+        <h4>What each score looks like</h4>
+        <div class="levels">${i.levels.map((l, k) => `<div class="lv" style="border-color:${LEVEL_COLORS[k]}"><b style="color:${LEVEL_COLORS[k]}">${LEVEL_LABELS[k]}</b>${esc(l)}</div>`).join('')}</div>
+        <div class="blind"><b>Watch for this blind spot:</b> ${esc(i.blindspot)}</div>
+      </div>
+    </div>`;
+}
+
+function setScore(id, v, silent) {
+  scores[id] = v;
+  const key = id.replace('.', '_');
+  const row = document.getElementById('it' + key);
+  const z = zoneFor(v);
+  row.classList.remove('unrated');
+  row.style.setProperty('--zc', z.color);
+  document.getElementById('v' + key).textContent = v;
+  document.getElementById('z' + key).textContent = z.name;
+  const r = row.querySelector('input[type=range]');
+  if (+r.value !== v) r.value = v;
+  r.style.setProperty('--p', ((v - 1) / 9 * 100) + '%');
+  if (!silent) refresh();
+}
+
+/* Radar wheel (plain SVG, prints cleanly) */
+function wheelSvg(values) {
+  const cx = 200, cy = 190, R = 130, n = 5;
+  const ang = k => -Math.PI / 2 + k * 2 * Math.PI / n;
+  const pt = (k, r) => [cx + r * Math.cos(ang(k)), cy + r * Math.sin(ang(k))];
+  const poly = r => Array.from({ length: n }, (_, k) => pt(k, r).map(x => x.toFixed(1)).join(',')).join(' ');
+  const short = ['Mindset', 'Body', 'Spheres', 'Environment', 'Spirit'];
+  let s = `<svg viewBox="0 0 400 380" role="img" aria-label="Your five-foundation wheel">`;
+  [2, 4, 6, 8, 10].forEach(l => s += `<polygon points="${poly(R * l / 10)}" fill="none" stroke="rgba(255,255,255,${l === 10 ? .28 : .12})" stroke-width="1"/>`);
+  for (let k = 0; k < n; k++) {
+    const [x, y] = pt(k, R);
+    s += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="rgba(255,255,255,.14)"/>`;
+    const [lx, ly] = pt(k, R + 24);
+    const anchor = Math.abs(lx - cx) < 5 ? 'middle' : (lx > cx ? 'start' : 'end');
+    s += `<text x="${lx.toFixed(1)}" y="${(ly + 4).toFixed(1)}" text-anchor="${anchor}" font-family="Inter" font-size="13" font-weight="600" fill="#fff">${short[k]}</text>`;
+  }
+  [2, 4, 6, 8, 10].forEach(l => s += `<text x="${cx + 4}" y="${(cy - R * l / 10 + 4).toFixed(1)}" font-family="Inter" font-size="9" fill="rgba(255,255,255,.45)">${l}</text>`);
+  if (values.some(v => v != null)) {
+    const pts = values.map((v, k) => pt(k, R * (v || 0) / 10));
+    s += `<polygon points="${pts.map(p => p.map(x => x.toFixed(1)).join(',')).join(' ')}" fill="rgba(197,160,68,.35)" stroke="#C5A044" stroke-width="2.5" stroke-linejoin="round"/>`;
+    pts.forEach(([x, y], k) => { if (values[k] != null) s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4.5" fill="#C5A044" stroke="#1B1C2E" stroke-width="1.5"/>`; });
+  }
+  return s + `</svg>`;
+}
+
+function refresh() {
+  const rated = Object.keys(scores).length;
+  const partials = FOUNDATIONS.map(f => partialAvg(f.n));
+  const fulls = FOUNDATIONS.map(f => foundationAvg(f.n));
+  document.getElementById('wheel').innerHTML = wheelSvg(partials);
+
+  FOUNDATIONS.forEach((f, k) => document.getElementById('favg' + f.n).textContent = fmt(partials[k]));
+  document.getElementById('fscores').innerHTML = FOUNDATIONS.map((f, k) => {
+    const v = partials[k];
+    return `<li><span><i style="background:var(--f${f.n})"></i>${esc(f.name)}</span><b style="color:${v == null ? '#8d8fa3' : zoneFor(v).color}">${fmt(v)}</b></li>`;
+  }).join('');
+
+  const overall = rated ? avg(partials.filter(v => v != null)) : null;
+  document.getElementById('overall').textContent = fmt(overall);
+  const oz = document.getElementById('overallZone');
+  oz.textContent = overall == null ? 'Not rated yet' : zoneFor(overall).name;
+  oz.style.color = overall == null ? '#b9b9c8' : zoneFor(overall).color;
+  document.getElementById('progress').textContent = rated === 30 ? 'All 30 areas rated' : `${rated} of 30 areas rated`;
+
+  if (fulls.every(v => v != null)) {
+    const lo = fulls.indexOf(Math.min(...fulls)), hi = fulls.indexOf(Math.max(...fulls));
+    const gap = fulls[hi] - fulls[lo];
+    document.getElementById('lowest').textContent = `${FOUNDATIONS[lo].name} (${fmt(fulls[lo])})`;
+    document.getElementById('highest').textContent = `${FOUNDATIONS[hi].name} (${fmt(fulls[hi])})`;
+    document.getElementById('gap').textContent = gap < 1.5 ? `Fairly balanced (${fmt(gap)} point spread)` : `${fmt(gap)} point spread between highest and lowest`;
+  }
+}
+
+/* Results link: scores only, in the URL fragment (never sent to a server) */
+function encodeScores() { return ITEMS.map(i => scores[i.id] == null ? '0' : (scores[i.id] === 10 ? 'a' : String(scores[i.id]))).join(''); }
+function loadFromHash() {
+  const m = location.hash.match(/s=([0-9a]{30})/);
+  if (!m) return false;
+  m[1].split('').forEach((c, k) => { if (c !== '0') setScore(ITEMS[k].id, c === 'a' ? 10 : +c, true); });
+  return true;
+}
+
+function summaryFields() {
+  const fulls = FOUNDATIONS.map(f => foundationAvg(f.n));
+  const lo = fulls.indexOf(Math.min(...fulls));
+  const detail = FOUNDATIONS.map((f, k) =>
+    `${f.name} (average ${fmt(fulls[k])})\n` + ITEMS.filter(i => i.f === f.n).map(i => `  ${i.id} ${i.title}: ${scores[i.id]}`).join('\n')
+  ).join('\n\n');
+  const keys = ['fdn_mindset_score', 'fdn_body_score', 'fdn_spheres_score', 'fdn_environments_score', 'fdn_spirit_score'];
+  const out = [
+    { name: 'fdn_overall_score', value: avg(fulls).toFixed(1) },
+    ...keys.map((k, i) => ({ name: k, value: fulls[i].toFixed(1) })),
+    { name: 'fdn_lowest_foundation', value: FOUNDATIONS[lo].name },
+    { name: 'fdn_scores_detail', value: detail },
+    { name: 'fdn_results_url', value: location.origin + location.pathname + '#s=' + encodeScores() }
+  ];
+  ['stop', 'start', 'protect'].forEach(k => {
+    const v = document.getElementById(k).value.trim();
+    if (v) out.push({ name: 'fdn_' + k, value: v });
+  });
+  return out;
+}
+
+function hutk() { const m = document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/); return m ? m[1] : undefined; }
+
+document.getElementById('emailForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const msg = document.getElementById('sendMsg'), btn = document.getElementById('sendBtn');
+  const first = document.getElementById('firstname').value.trim();
+  const last = document.getElementById('lastname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  msg.className = 'msg err';
+  if (Object.keys(scores).length < 30) { msg.textContent = `Rate all 30 areas first (${Object.keys(scores).length} of 30 done).`; return; }
+  if (!first || !last || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please enter your first name, last name, and a valid email.'; return; }
+  if (!CONFIG.formId) { msg.textContent = 'Preview mode: sending is not connected yet.'; return; }
+  btn.disabled = true; msg.className = 'msg'; msg.textContent = 'Sending…';
+  const body = {
+    fields: [{ name: 'email', value: email }, { name: 'firstname', value: first }, { name: 'lastname', value: last }, ...summaryFields()],
+    context: { pageUri: location.href.split('#')[0], pageName: document.title, hutk: hutk() }
+  };
+  try {
+    const r = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${CONFIG.portalId}/${CONFIG.formId}`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+    });
+    if (!r.ok) throw new Error(r.status);
+    msg.className = 'msg ok';
+    msg.textContent = 'Sent. Check your inbox in a few minutes.';
+    if (window.gtag) gtag('event', 'assessment_results_emailed');
+  } catch (err) {
+    msg.className = 'msg err';
+    msg.textContent = 'Something went wrong. Please try again, or use Print to save your results.';
+    btn.disabled = false;
+  }
+});
+
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+const book = document.getElementById('bookBtn');
+if (CONFIG.meetingUrl) book.href = CONFIG.meetingUrl; else book.addEventListener('click', e => { e.preventDefault(); alert('Preview mode: the booking link is not connected yet.'); });
+book.addEventListener('click', () => { if (window.gtag) gtag('event', 'assessment_book_call_click'); });
+
+/* Prefill the email form from the full name */
+document.getElementById('fullname').addEventListener('change', e => {
+  const parts = e.target.value.trim().split(/\s+/);
+  const f = document.getElementById('firstname'), l = document.getElementById('lastname');
+  if (!f.value && parts[0]) f.value = parts[0];
+  if (!l.value && parts.length > 1) l.value = parts.slice(1).join(' ');
+});
+
+document.getElementById('date').valueAsDate = new Date();
+build();
+const restored = loadFromHash();
+document.getElementById('fdn1').classList.add('open');
+document.querySelector('#fdn1 .fdn-head').setAttribute('aria-expanded', 'true');
+refresh();
+if (restored) document.querySelectorAll('.fdn').forEach(s => s.classList.add('open'));
+</script>
+</body>
+</html>
