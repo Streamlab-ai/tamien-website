@@ -91,8 +91,23 @@
   .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 12px; color: #c9c9d6; margin-top: 14px; }
   .legend span::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--c); }
 
+  .time-note { display: inline-block; margin: 0 0 10px; padding: 6px 12px; border-radius: 999px; background: #F7F5F0; font-size: 13px; font-weight: 600; color: var(--navy); }
+
+  /* Step-through progress */
+  .stepper { position: sticky; top: 0; z-index: 5; background: var(--cream); padding: 10px 0 8px; margin-top: 6px; }
+  .stepper-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 14px; margin-bottom: 6px; }
+  .stepper-top b { font-weight: 700; }
+  .stepper-top span:last-child { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .segs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .seg { height: 8px; border: 0; padding: 0; border-radius: 4px; background: #E6E2D8; cursor: pointer; }
+  .seg.done { background: var(--gold); }
+  .seg.current { background: var(--navy); }
+
   /* Foundations */
-  .fdn { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin: 14px 0; overflow: hidden; border-left: 5px solid var(--fc); }
+  .fdn { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin: 14px 0; overflow: hidden; border-left: 5px solid var(--fc); scroll-margin-top: 70px; }
+  .fdn.done .fdn-num { background: var(--fc); color: #fff; }
+  .fdn-next { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px 0 8px; border-top: 1px solid var(--line); }
+  .fdn-next .small { margin: 0; }
   .fdn-head { width: 100%; display: flex; align-items: center; gap: 12px; padding: 16px 18px; background: none; border: 0; cursor: pointer; text-align: left; font: inherit; color: inherit; }
   .fdn-num { width: 34px; height: 34px; flex: none; border-radius: 9px; background: color-mix(in srgb, var(--fc) 14%, white); color: var(--fc); display: flex; align-items: center; justify-content: center; font-weight: 700; }
   .fdn-title { flex: 1; }
@@ -172,7 +187,7 @@
     .who { grid-template-columns: 1fr; }
     .ssp label em { min-height: 0; }
   }
-  @media (max-width: 420px) { .row2 { grid-template-columns: 1fr; } .fdn-avg span { display: none; } }
+  @media (max-width: 420px) { .row2 { grid-template-columns: 1fr; } .fdn-avg span { display: none; } .stepper-top span:last-child { display: none; } }
 
   @media print {
     @page { margin: 12mm; }
@@ -216,7 +231,8 @@
 
   <section class="card intro no-print">
     <h2 class="section-title">Before you begin</h2>
-    <p class="small">Rate each of the 30 areas from 1 to 10. Tap <b>Learn more</b> under any area for a plain-language description, questions to ask yourself, and what each score looks like.</p>
+    <p class="time-note">About 10 minutes · 5 foundations · 6 quick ratings each</p>
+    <p class="small">Rate each area from 1 to 10, one foundation at a time. Tap <b>Learn more</b> under any area for a plain-language description, questions to ask yourself, and what each score looks like.</p>
     <div class="zones">
       <div class="zone z1"><b>1–3</b>Depleting</div>
       <div class="zone z2"><b>4–6</b>Maintenance</div>
@@ -245,7 +261,7 @@
         <div class="eyebrow" style="color:#b9b9c8">Overall baseline</div>
         <div class="ring" id="overall">–</div>
         <div class="zone-label" id="overallZone">Not rated yet</div>
-        <div class="progress no-print" id="progress">0 of 30 areas rated</div>
+        <div class="progress no-print" id="progress">0 of 5 foundations complete</div>
       </div>
       <ul class="fscores" id="fscores"></ul>
       <div class="legend">
@@ -256,6 +272,11 @@
       </div>
     </div>
   </section>
+
+  <div class="stepper no-print" id="stepper">
+    <div class="stepper-top"><span id="stepLabel"><b>Foundation 1 of 5</b> · Mindset &amp; Mental Diet</span><span>About 10 min total</span></div>
+    <div class="segs" id="segs"></div>
+  </div>
 
   <div id="foundations"></div>
 
@@ -349,6 +370,36 @@ function partialAvg(n) {
   const vals = ITEMS.filter(i => i.f === n && scores[i.id] != null).map(i => scores[i.id]);
   return avg(vals);
 }
+function ratedIn(n) { return ITEMS.filter(i => i.f === n && scores[i.id] != null).length; }
+function doneCount() { return FOUNDATIONS.filter(f => ratedIn(f.n) === 6).length; }
+function currentStep() {   // first foundation not yet finished
+  const f = FOUNDATIONS.find(f => ratedIn(f.n) < 6);
+  return f ? f.n : null;
+}
+
+/* One foundation open at a time */
+function openFdn(n, scroll) {
+  FOUNDATIONS.forEach(f => {
+    const sec = document.getElementById('fdn' + f.n), open = f.n === n;
+    sec.classList.toggle('open', open);
+    sec.querySelector('.fdn-head').setAttribute('aria-expanded', open);
+  });
+  if (scroll && n) document.getElementById('fdn' + n).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  updateStepper();
+}
+
+function updateStepper() {
+  const openSec = document.querySelector('.fdn.open');
+  const focus = openSec ? +openSec.id.slice(3) : currentStep();
+  const label = document.getElementById('stepLabel');
+  if (doneCount() === 5 && !openSec) label.innerHTML = '<b>All 5 foundations complete ✓</b> · Tap any step to review';
+  else label.innerHTML = `<b>Foundation ${focus} of 5</b> · ${esc(FOUNDATIONS[focus - 1].name)}`;
+  document.querySelectorAll('.seg').forEach(s => {
+    const n = +s.dataset.n;
+    s.classList.toggle('done', ratedIn(n) === 6);
+    s.classList.toggle('current', n === focus && ratedIn(n) < 6);
+  });
+}
 
 /* Build the five foundations */
 function build() {
@@ -364,14 +415,26 @@ function build() {
       <div class="fdn-body" id="fdnb${f.n}">
         <p class="fdn-intro">${esc(f.intro)}</p>
         ${ITEMS.filter(i => i.f === f.n).map(itemHtml).join('')}
+        <div class="fdn-next no-print">
+          <button class="btn next-btn" type="button" data-n="${f.n}" disabled>${f.n < 5 ? `Next: ${esc(FOUNDATIONS[f.n].name)} &rarr;` : 'See my results &rarr;'}</button>
+          <p class="small" id="hint${f.n}">Rate all 6 areas to continue.</p>
+        </div>
       </div>
     </section>`).join('');
 
   root.querySelectorAll('.fdn-head').forEach(h => h.addEventListener('click', () => {
-    const sec = h.parentElement, open = !sec.classList.contains('open');
-    sec.classList.toggle('open', open);
-    h.setAttribute('aria-expanded', open);
+    const sec = h.parentElement, n = +sec.id.slice(3);
+    openFdn(sec.classList.contains('open') ? null : n, false);
   }));
+  root.querySelectorAll('.next-btn').forEach(b => b.addEventListener('click', () => {
+    const n = +b.dataset.n;
+    if (n < 5) { openFdn(n + 1, true); return; }
+    openFdn(null, false);
+    document.querySelector('.results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+  document.getElementById('segs').innerHTML = FOUNDATIONS.map(f =>
+    `<button class="seg" type="button" data-n="${f.n}" aria-label="Go to foundation ${f.n}: ${esc(f.name)}"></button>`).join('');
+  document.querySelectorAll('.seg').forEach(s => s.addEventListener('click', () => openFdn(+s.dataset.n, true)));
   root.querySelectorAll('.learn').forEach(b => b.addEventListener('click', () => {
     const d = document.getElementById('d' + b.dataset.id.replace('.', '_'));
     const show = !d.classList.contains('show');
@@ -466,7 +529,18 @@ function refresh() {
   const oz = document.getElementById('overallZone');
   oz.textContent = overall == null ? 'Not rated yet' : zoneFor(overall).name;
   oz.style.color = overall == null ? '#b9b9c8' : zoneFor(overall).color;
-  document.getElementById('progress').textContent = rated === 30 ? 'All 30 areas rated' : `${rated} of 30 areas rated`;
+  const done = doneCount();
+  document.getElementById('progress').textContent = done === 5 ? 'All 5 foundations complete' : `${done} of 5 foundations complete`;
+
+  FOUNDATIONS.forEach(f => {
+    const n = ratedIn(f.n), complete = n === 6;
+    const sec = document.getElementById('fdn' + f.n);
+    sec.classList.toggle('done', complete);
+    sec.querySelector('.fdn-num').textContent = complete ? '✓' : f.n;
+    sec.querySelector('.next-btn').disabled = !complete;
+    document.getElementById('hint' + f.n).textContent = complete ? '' : `${n} of 6 rated. Rate all 6 to continue.`;
+  });
+  updateStepper();
 
   if (fulls.every(v => v != null)) {
     const lo = fulls.indexOf(Math.min(...fulls)), hi = fulls.indexOf(Math.max(...fulls));
@@ -516,7 +590,7 @@ document.getElementById('emailForm').addEventListener('submit', async e => {
   const last = document.getElementById('lastname').value.trim();
   const email = document.getElementById('email').value.trim();
   msg.className = 'msg err';
-  if (Object.keys(scores).length < 30) { msg.textContent = `Rate all 30 areas first (${Object.keys(scores).length} of 30 done).`; return; }
+  if (doneCount() < 5) { msg.textContent = `Finish all 5 foundations first (${doneCount()} of 5 done).`; return; }
   if (!first || !last || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please enter your first name, last name, and a valid email.'; return; }
   if (!CONFIG.formId) { msg.textContent = 'Preview mode: sending is not connected yet.'; return; }
   btn.disabled = true; msg.className = 'msg'; msg.textContent = 'Sending…';
@@ -556,10 +630,8 @@ document.getElementById('fullname').addEventListener('change', e => {
 document.getElementById('date').valueAsDate = new Date();
 build();
 const restored = loadFromHash();
-document.getElementById('fdn1').classList.add('open');
-document.querySelector('#fdn1 .fdn-head').setAttribute('aria-expanded', 'true');
 refresh();
-if (restored) document.querySelectorAll('.fdn').forEach(s => s.classList.add('open'));
+if (!restored) openFdn(currentStep() || 1, false);   // a saved results link opens with every foundation collapsed
 </script>
 </body>
 </html>
