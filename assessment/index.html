@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
 <title>5-Foundation Baseline Assessment | Elevate You with Tamien Dysart</title>
 <meta name="description" content="An honest self-assessment across five foundations of life: mindset, body, relationships, environment, and spirit. Rate 30 areas, see your wheel, and find where to begin.">
 <!-- Google tag (gtag.js) -->
@@ -68,6 +67,15 @@
   .guide-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 10px; font-weight: 600; font-size: 14px; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--gold); }
 
   .who { display: grid; grid-template-columns: 1fr 180px; gap: 14px; }
+  .taking { grid-column: 1 / -1; border: 0; margin: 4px 0 0; padding: 0; min-width: 0; scroll-margin-top: 80px; }
+  .taking legend { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; padding: 0; }
+  .taking.missing legend { color: var(--red); }
+  .opt { display: inline-flex; align-items: center; gap: 8px; margin: 0 22px 8px 0; font-size: 15px; cursor: pointer; }
+  .opt input { width: 18px; height: 18px; margin: 0; accent-color: var(--navy); }
+  .privacy { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+  .org-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
+  .org-fields[hidden] { display: none; }
+  .org-fields input[readonly] { background: #F7F5F0; }
   label.f { display: block; }
   label.f span { display: block; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
   input[type=text], input[type=email], input[type=date], textarea {
@@ -196,7 +204,7 @@
     .results { grid-template-columns: 1fr; }
     .zones, .levels { grid-template-columns: 1fr 1fr; }
     .reading, .ssp { grid-template-columns: 1fr; }
-    .who { grid-template-columns: 1fr; }
+    .who, .org-fields { grid-template-columns: 1fr; }
     .ssp label em { min-height: 0; }
   }
   @media (max-width: 420px) { .row2 { grid-template-columns: 1fr; } .fdn-avg span { display: none; } .step-time { display: none; } }
@@ -264,6 +272,16 @@
   <section class="card who">
     <label class="f"><span>Full name</span><input type="text" id="fullname" placeholder="Enter your name" autocomplete="name"></label>
     <label class="f"><span>Date</span><input type="date" id="date"></label>
+    <fieldset class="taking" id="taking">
+      <legend>Are you taking this assessment:</legend>
+      <label class="opt"><input type="radio" name="takingFor" value="individual"> Just for yourself</label>
+      <label class="opt"><input type="radio" name="takingFor" value="organization"> Within an organization</label>
+      <p class="privacy">*All of your answers will remain 100% private. At the organizational level, we only aggregate the total scores to measure team, department, or company baselines and progress.</p>
+      <div class="org-fields" id="orgFields" hidden>
+        <label class="f"><span>Organization</span><input type="text" id="orgName" autocomplete="organization"></label>
+        <label class="f"><span>Team or department</span><input type="text" id="orgTeam"></label>
+      </div>
+    </fieldset>
   </section>
 
   <section class="results" aria-label="Your results">
@@ -618,8 +636,35 @@ function summaryFields() {
     const v = document.getElementById(k).value.trim();
     if (v) out.push({ name: 'fdn_' + k, value: v });
   });
+  const tf = takingFor();
+  if (tf) out.push({ name: 'fdn_taking_for', value: tf });
+  if (tf === 'organization') {
+    out.push({ name: 'fdn_organization', value: document.getElementById('orgName').value.trim() });
+    const team = document.getElementById('orgTeam').value.trim();
+    if (team) out.push({ name: 'fdn_team', value: team });
+  }
   return out;
 }
+
+/* Just for yourself / within an organization */
+function takingFor() { const r = document.querySelector('input[name=takingFor]:checked'); return r ? r.value : ''; }
+function syncTaking() {
+  document.getElementById('orgFields').hidden = takingFor() !== 'organization';
+  document.getElementById('taking').classList.remove('missing');
+}
+document.querySelectorAll('input[name=takingFor]').forEach(r => r.addEventListener('change', syncTaking));
+
+/* Organization links (?org=Name&team=Team) pre-fill and lock the organization so every response groups together */
+(function () {
+  const p = new URLSearchParams(location.search), org = (p.get('org') || '').trim(), team = (p.get('team') || '').trim();
+  if (!org) return;
+  document.querySelector('input[name=takingFor][value=organization]').checked = true;
+  const o = document.getElementById('orgName');
+  o.value = org;
+  o.readOnly = true;
+  if (team) document.getElementById('orgTeam').value = team;
+  syncTaking();
+})();
 
 function hutk() { const m = document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/); return m ? m[1] : undefined; }
 
@@ -631,6 +676,13 @@ document.getElementById('emailForm').addEventListener('submit', async e => {
   const email = document.getElementById('email').value.trim();
   msg.className = 'msg err';
   if (doneCount() < 5) { msg.textContent = `Finish all 5 foundations first (${doneCount()} of 5 done).`; return; }
+  const tf = takingFor();
+  if (!tf || (tf === 'organization' && !document.getElementById('orgName').value.trim())) {
+    msg.textContent = tf ? 'Please enter your organization at the top.' : 'Please choose at the top: just for yourself or within an organization.';
+    document.getElementById('taking').classList.add('missing');
+    goTo('taking');
+    return;
+  }
   if (!first || !last || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please enter your first name, last name, and a valid email.'; return; }
   if (!CONFIG.formId) { msg.textContent = 'Preview mode: sending is not connected yet.'; return; }
   btn.disabled = true; msg.className = 'msg'; msg.textContent = 'Sending…';
